@@ -1,5 +1,6 @@
 import React from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Meteor } from 'meteor/meteor';
 
 const layoutLogin = {
   width: '100%',
@@ -31,8 +32,21 @@ const textLogin = {
 
 export default class Login extends React.Component {
 
-  clickRegister(){
+  onClickRegister() {
     FlowRouter.go('register');
+  }
+
+  onClickLogin() {
+    const username = $("#username").val();
+    const email = username;
+    const password = $('#password').val();
+
+    Meteor.loginWithPassword({
+      username,
+      email,
+    },password, () => {
+      FlowRouter.go('map1');
+    })
   }
 
   render(){
@@ -42,8 +56,16 @@ export default class Login extends React.Component {
           <h1 style={textLogin}>Login</h1><br/>
             <input id="username" type="text" placeholder="Username" className="box-input"/>
             <input id="password" type="password" placeholder="Password" className="box-input"/>
-            <a className="waves-effect waves-light btn-large"><h4>Let me in !!</h4></a>
-            <a onClick={this.clickRegister} className="waves-effect waves-light btn-large"><h4>Register</h4></a>
+            <a
+              onClick={this.onClickLogin}
+              className="waves-effect waves-light btn-large"
+            >
+            <h4>Let me in !!</h4></a>
+            <a
+              onClick={this.onClickRegister}
+              className="waves-effect waves-light btn-large"
+            >
+            <h4>Register</h4></a>
         </div>
       </div>
     )

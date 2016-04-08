@@ -23,3 +23,5 @@ kadira:flow-router
 fourseven:scss
 poetic:materialize-scss
 react-meteor-data
+accounts-base
+accounts-password

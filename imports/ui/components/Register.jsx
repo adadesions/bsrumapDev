@@ -1,5 +1,6 @@
 import React from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Accounts } from 'meteor/accounts-base';
 
 const layoutLogin = {
   width: '100%',
@@ -29,8 +30,20 @@ const textLogin = {
   letterSpacing: '1px',
 };
 export default class Register extends React.Component {
-  clickBack(){
+  onClickBack() {
     FlowRouter.go('login');
+  }
+
+  onClickSubmit() {
+    const email = $('#email').val();
+    const username = $('#username').val();
+    const password = $('#password').val();
+    Accounts.createUser({
+      email,
+      username,
+      password,
+    })
+    FlowRouter.go('map1');
   }
   render(){
     return(
@@ -40,8 +53,16 @@ export default class Register extends React.Component {
             <input id="username" type="text" placeholder="Username" className="box-input"/>
             <input id="password" type="password" placeholder="Password" className="box-input"/>
             <input id="email" type="email" placeholder="Email" className="box-input"/>
-            <a className="waves-effect waves-light btn-large"><h4>Submit</h4></a>
-            <a onClick={this.clickBack} className="waves-effect waves-light btn-large"><h4>Back</h4></a>
+            <a
+              onClick={this.onClickSubmit}
+              className="waves-effect waves-light btn-large"
+              >
+              <h4>Submit</h4></a>
+            <a
+              onClick={this.onClickBack}
+              className="waves-effect waves-light btn-large"
+              >
+              <h4>Back</h4></a>
         </div>
       </div>
     )

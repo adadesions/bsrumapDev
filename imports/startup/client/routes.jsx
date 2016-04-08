@@ -16,6 +16,15 @@ FlowRouter.route('/', {
   name: 'root',
   action(){
     mount(AppContainer, {
+      content: <Login />
+    })
+  }
+})
+
+FlowRouter.route('/map1', {
+  name: 'map1',
+  action(){
+    mount(AppContainer, {
       content: <Map1 />
     })
   }
