@@ -42,10 +42,14 @@ export default class Login extends React.Component {
     const password = $('#password').val();
 
     Meteor.loginWithPassword({
-      username,
       email,
     },password, () => {
-      FlowRouter.go('map1');
+      if(Meteor.user()){
+        FlowRouter.go('map1');
+      }
+      else {
+        console.log("Not yet");
+      }
     })
   }
 
