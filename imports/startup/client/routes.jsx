@@ -3,9 +3,9 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 import { mount } from 'react-mounter';
 import AppContainer from '../../layouts/AppContainer.jsx';
 
+// Pages
 import Map1 from '../../pages/Map1.jsx';
 import Map2 from '../../pages/Map2.jsx';
-
 import Login from '../../pages/Login.jsx';
 import Register from '../../pages/Register.jsx';
 import MainSearch from '../../pages/MainSearch.jsx';
@@ -14,8 +14,8 @@ import SearchRoomByNumber from '../../ui/components/SearchRoomByNumber.jsx';
 import SearchBuildingByName from '../../ui/components/SearchBuildingByName.jsx';
 import SearchRoomByName from '../../ui/components/SearchRoomByName.jsx';
 import TeacherDetail from '../../ui/components/TeacherDetail.jsx';
-
 import BuildingDescription from '../../pages/BuildingDescription.jsx';
+import MenuPage from '../../pages/MenuPage.jsx';
 
 
 FlowRouter.route('/', {
@@ -63,7 +63,20 @@ FlowRouter.route('/register', {
   }
 })
 
-FlowRouter.route('/mainsearch', {
+FlowRouter.route('/menu', {
+  name: 'menu',
+  action(){
+    mount(AppContainer, {
+      content: <MenuPage />
+    })
+  }
+})
+
+const search = FlowRouter.group({
+  prefix: '/search'
+})
+
+search.route('/', {
   name: 'mainsearch',
   action(){
     mount(AppContainer, {
@@ -72,7 +85,7 @@ FlowRouter.route('/mainsearch', {
   }
 })
 
-FlowRouter.route('/searchTeacher', {
+search.route('/teacher', {
   name: 'searchTeacher',
   action(){
     mount(AppContainer, {
@@ -81,7 +94,7 @@ FlowRouter.route('/searchTeacher', {
   }
 })
 
-FlowRouter.route('/teacherDetail', {
+search.route('/teacher/detail', {
   name: 'teacherDetail',
   action(){
     mount(AppContainer, {
@@ -90,7 +103,7 @@ FlowRouter.route('/teacherDetail', {
   }
 })
 
-FlowRouter.route('/searchRoomByNumber', {
+search.route('/room/number', {
   name: 'searchRoomByNumber',
   action(){
     mount(AppContainer, {
@@ -99,7 +112,16 @@ FlowRouter.route('/searchRoomByNumber', {
   }
 })
 
-FlowRouter.route('/searchBuildingByName', {
+search.route('/room/name', {
+  name: 'searchRoomByName',
+  action(){
+    mount(AppContainer, {
+      content: <SearchRoomByName />
+    })
+  }
+})
+
+search.route('/building/name', {
   name: 'searchBuildingByName',
   action(){
     mount(AppContainer, {
@@ -108,14 +130,6 @@ FlowRouter.route('/searchBuildingByName', {
   }
 })
 
-FlowRouter.route('/searchRoomByName', {
-  name: 'searchRoomByName',
-  action(){
-    mount(AppContainer, {
-      content: <SearchRoomByName />
-    })
-  }
-})
 
 const building = FlowRouter.group({
   prefix: '/building'

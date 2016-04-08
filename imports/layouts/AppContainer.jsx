@@ -7,7 +7,7 @@ export default class AppContainer extends React.Component{
   render(){
     return(
       <main>
-        <Navigator header={FlowRouter.current().path} />
+        <Navigator current={FlowRouter.current().path} />
         {this.props.content}
       </main>
     )

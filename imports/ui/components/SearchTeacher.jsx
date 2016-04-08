@@ -41,11 +41,11 @@ export default class SearchTeacher extends React.Component {
         <div style={paddingLayout} className="row">
           <div style={sizeInput} className="input-field col s6">
             <input style={sizeInput} id="firstName" type="text" className="validate"/>
-            <label style={sizeText} for="firstName">ชื่อ</label>
+            <label style={sizeText} htmlFor="firstName">ชื่อ</label>
           </div>
           <div style={sizeInput} className="input-field col s6">
             <input style={sizeInput} id="lastName" type="text" className="validate"/>
-            <label style={sizeText} for="lastName">นามสกุล</label>
+            <label style={sizeText} htmlFor="lastName">นามสกุล</label>
           </div>
 
           <table style={marginTable} className="striped">

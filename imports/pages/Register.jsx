@@ -45,7 +45,7 @@ export default class Register extends React.Component {
     })
     FlowRouter.go('map1');
   }
-  render(){
+  render() {
     return(
       <div style={layoutLogin} className="login-layout">
         <div style={blogLogin}>
