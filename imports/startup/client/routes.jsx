@@ -5,6 +5,7 @@ import AppContainer from '../../layouts/AppContainer.jsx';
 
 import Map1 from '../../pages/Map1.jsx';
 import Map2 from '../../pages/Map2.jsx';
+import BuildingDescription from '../../pages/BuildingDescription.jsx';
 
 FlowRouter.route('/', {
   name: 'root',
@@ -31,6 +32,8 @@ const building = FlowRouter.group({
 building.route('/:id', {
   name: building,
   action(params) {
-    console.log(params.id);
+    mount(AppContainer, {
+      content: <BuildingDescription id={params.id}/>
+    })
   }
 })
