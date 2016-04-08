@@ -7,9 +7,9 @@ export default class Menu extends React.Component {
         <section>
           <nav>
             <div className="nav-wrapper">
-              <a href="#!" className="brand-logo">BsruMap</a>
+              <a href="/" className="brand-logo">BsruMap</a>
               <ul className="right">
-                <li><a href="badges.html"><i className="material-icons">view_module</i></a></li>
+                <li><a href="#"><i className="material-icons">view_module</i></a></li>
               </ul>
             </div>
           </nav>
