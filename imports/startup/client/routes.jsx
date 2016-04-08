@@ -6,8 +6,14 @@ import AppContainer from '../../layouts/AppContainer.jsx';
 import Map1 from '../../pages/Map1.jsx';
 import Map2 from '../../pages/Map2.jsx';
 
-import Login from '../../ui/components/Login.jsx';
-import Register from '../../ui/components/Register.jsx';
+import Login from '../../pages/Login.jsx';
+import Register from '../../pages/Register.jsx';
+import MainSearch from '../../pages/MainSearch.jsx';
+import SearchTeacher from '../../ui/components/SearchTeacher.jsx';
+import SearchRoomByNumber from '../../ui/components/SearchRoomByNumber.jsx';
+import SearchBuildingByName from '../../ui/components/SearchBuildingByName.jsx';
+import SearchRoomByName from '../../ui/components/SearchRoomByName.jsx';
+import TeacherDetail from '../../ui/components/TeacherDetail.jsx';
 
 import BuildingDescription from '../../pages/BuildingDescription.jsx';
 
@@ -53,6 +59,60 @@ FlowRouter.route('/register', {
   action(){
     mount(AppContainer, {
       content: <Register />
+    })
+  }
+})
+
+FlowRouter.route('/mainsearch', {
+  name: 'mainsearch',
+  action(){
+    mount(AppContainer, {
+      content: <MainSearch />
+    })
+  }
+})
+
+FlowRouter.route('/searchTeacher', {
+  name: 'searchTeacher',
+  action(){
+    mount(AppContainer, {
+      content: <SearchTeacher />
+    })
+  }
+})
+
+FlowRouter.route('/teacherDetail', {
+  name: 'teacherDetail',
+  action(){
+    mount(AppContainer, {
+      content: <TeacherDetail />
+    })
+  }
+})
+
+FlowRouter.route('/searchRoomByNumber', {
+  name: 'searchRoomByNumber',
+  action(){
+    mount(AppContainer, {
+      content: <SearchRoomByNumber />
+    })
+  }
+})
+
+FlowRouter.route('/searchBuildingByName', {
+  name: 'searchBuildingByName',
+  action(){
+    mount(AppContainer, {
+      content: <SearchBuildingByName />
+    })
+  }
+})
+
+FlowRouter.route('/searchRoomByName', {
+  name: 'searchRoomByName',
+  action(){
+    mount(AppContainer, {
+      content: <SearchRoomByName />
     })
   }
 })
