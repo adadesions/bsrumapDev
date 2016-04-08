@@ -116,7 +116,7 @@ building.route('/:id', {
   name: building,
   action(params) {
     mount(AppContainer, {
-      content: <BuildingDescription id={params.id}/>
+      content: <BuildingDescription />
     })
   }
 })
