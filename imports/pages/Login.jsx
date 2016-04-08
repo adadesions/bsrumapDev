@@ -3,7 +3,7 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 
 const layoutLogin = {
   width: '100%',
-  height: '100vh',
+  height: '110%',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
