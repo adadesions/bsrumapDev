@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Building } from '../api/collections/building.jsx';
 
 class BuildingDescription extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class BuildingDescription extends React.Component {
           <h3>
             Building {this.props.buildingId}
           </h3>
+          <img src={this.props.buildingImg} alt="" />
         </center>
       </section>
     )
@@ -18,11 +20,21 @@ class BuildingDescription extends React.Component {
 }
 
 BuildingDescription.PropTypes = {
-  buildingId: PropTypes.any.isRequire,
+  buildingId: PropTypes.string.isRequire,
+  building: PropTypes.object.isRequire,
 }
 
-export default createContainer(() => {  
+export default createContainer(() => {
+  const buildingId = FlowRouter.getParam('id');
+  const building = Building.findOne({building_id: buildingId});
+  let buildingImg = '';
+  if (building){
+    buildingImg = `/buildingDescription/${building.description}`;
+  }
+
   return {
-    buildingId: FlowRouter.getParam('id'),
+    buildingId,
+    building,
+    buildingImg,
   }
 }, BuildingDescription);
