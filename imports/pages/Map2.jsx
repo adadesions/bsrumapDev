@@ -3,12 +3,10 @@ import { Meteor } from 'meteor/meteor';
 
 
 
-export default class Mapcut2 extends React.Component {
+export default class Map2 extends React.Component {
 
 	render() {
 		return(
-
-
 				<main>
 					<div id="login">
 					</div>
