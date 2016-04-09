@@ -103,18 +103,6 @@ export default class MenuPage extends React.Component {
           .to({y: yTarget}, 2500, createjs.Ease.getPowInOut(2))
           .to({y: yEnd}, 2500, createjs.Ease.getPowInOut(2))
           .to({y: y}, 2500, createjs.Ease.getPowInOut(2))
-
-    // nameObject.on('click', () => {
-    //   if (pick === 'default') {
-    //     localImgSrc.src = imgActive;
-    //     pick = 'active';
-    //   }
-    //   else {
-    //     localImgSrc.src = imgDefault;
-    //     pick = 'default';
-    //   }
-    //   return { pick, imgSrc };
-    // });
   }
 
   tick() {
