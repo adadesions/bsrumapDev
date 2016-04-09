@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchOption from '../ui/components/SearchOption.jsx';
+import SearchOption from '../ui/components/search/SearchOption.jsx';
 
 const searchLayout = {
   padding: '3em',
