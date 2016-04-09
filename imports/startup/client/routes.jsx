@@ -9,6 +9,7 @@ import Map2 from '../../pages/Map2.jsx';
 import Login from '../../pages/Login.jsx';
 import Register from '../../pages/Register.jsx';
 import MainSearch from '../../pages/MainSearch.jsx';
+import MenuPage from '../../pages/MenuPage.jsx';
 import SearchTeacher from '../../ui/components/SearchTeacher.jsx';
 import SearchRoomByNumber from '../../ui/components/SearchRoomByNumber.jsx';
 import SearchBuildingByName from '../../ui/components/SearchBuildingByName.jsx';
@@ -68,6 +69,15 @@ FlowRouter.route('/mainsearch', {
   action(){
     mount(AppContainer, {
       content: <MainSearch />
+    })
+  }
+})
+
+FlowRouter.route('/menuPage', {
+  name: 'menuPage',
+  action(){
+    mount(AppContainer, {
+      content: <MenuPage />
     })
   }
 })
