@@ -65,9 +65,7 @@ export default class SearchTeacher extends React.Component {
           </div>
 
           <table style={marginTable} className="striped">
-            <tbody>
-                <SearchTeacherResult firstName={this.state.firstName} lastName={this.state.lastName}/>
-            </tbody>
+            <SearchTeacherResult firstName={this.state.firstName} lastName={this.state.lastName}/>            
           </table>
         </div>
       </div>
