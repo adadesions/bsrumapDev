@@ -15,9 +15,7 @@ import SearchRoomByNumber from '../../ui/components/search/SearchRoomByNumber.js
 import SearchBuildingByName from '../../ui/components/search/SearchBuildingByName.jsx';
 import SearchRoomByName from '../../ui/components/search/SearchRoomByName.jsx';
 import TeacherDetail from '../../ui/components/search/TeacherDetail.jsx';
-import BuildingDescription from '../../pages/BuildingDescription.jsx';
-import FloorBuilding from '../../ui/components/building/FloorBuilding.jsx';
-import FloorBuildingDetail from '../../ui/components/building/FloorBuildingDetail.jsx';
+import BuildingInformation from '../../pages/BuildingInformation.jsx';
 
 FlowRouter.route('/', {
   name: 'root',
@@ -69,24 +67,6 @@ FlowRouter.route('/menu', {
   action(){
     mount(AppContainer, {
       content: <MenuPage />
-    })
-  }
-})
-
-FlowRouter.route('/floorBuilding', {
-  name: 'floorBuilding',
-  action(){
-    mount(AppContainer, {
-      content: <FloorBuilding />
-    })
-  }
-})
-
-FlowRouter.route('/floorBuildingDetail', {
-  name: 'floorBuildingDetail',
-  action(){
-    mount(AppContainer, {
-      content: <FloorBuildingDetail />
     })
   }
 })
@@ -158,7 +138,7 @@ building.route('/:id', {
   name: building,
   action(params) {
     mount(AppContainer, {
-      content: <BuildingDescription />
+      content: <BuildingInformation />
     })
   }
 })
