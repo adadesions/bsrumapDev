@@ -9,7 +9,10 @@ export default class MainSearch extends React.Component {
   render() {
     return (
       <div style={searchLayout}>
-        <SearchOption />
+        <SearchOption name='teacher'/>
+        <SearchOption name='building'/>
+        <SearchOption name='roomNumber'/>
+        <SearchOption name='roomName'/>
       </div>
     )
   }

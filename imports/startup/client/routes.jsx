@@ -82,14 +82,6 @@ FlowRouter.route('/ebook', {
   }
 })
 
-FlowRouter.route('/floorBuilding', {
-  name: 'floorBuilding',
-  action(){
-    mount(AppContainer, {
-      content: <FloorBuilding />
-    })
-  }
-})
 
 FlowRouter.route('/website', {
   name: 'website',
@@ -100,6 +92,14 @@ FlowRouter.route('/website', {
   }
 })
 
+FlowRouter.route('/floorBuilding', {
+  name: 'floorBuilding',
+  action(){
+    mount(AppContainer, {
+      content: <FloorBuilding />
+    })
+  }
+})
 
 FlowRouter.route('/floorBuildingDetail', {
   name: 'floorBuildingDetail',
@@ -141,11 +141,11 @@ search.route('/teacher', {
   }
 })
 
-search.route('/teacher/detail', {
+search.route('/teacher/detail/:tid', {
   name: 'teacherDetail',
-  action(){
+  action(params){
     mount(AppContainer, {
-      content: <TeacherDetail />
+      content: <TeacherDetail tid={ params.tid }/>
     })
   }
 })
