@@ -1,51 +1,31 @@
 import React, { PropTypes } from 'react';
 import { Teachers } from '../../../api/collections/teachers.jsx';
 import { createContainer } from 'meteor/react-meteor-data';
+import ResultItem from './ResultItem.jsx';
 import Lazy from 'lazy.js';
 
-const rowTable = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  paddingLeft: '2em',
-  paddingRight: '2em',
-  alignItems: 'center',
-};
-const tableIcon = {
-  float: 'right',
-  cursor: 'pointer',
-};
-const setColorIcon = {
-  color: '#009688',
-};
 
-class SearchTeacherResult extends React.Component {
+export default class SearchTeacherResult extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       firstName: '',
       lastName: '',
     }
+    this.getRenderResult = this.getRenderResult.bind(this);
   }
 
-  onClickIcon() {
-    FlowRouter.go('teacherDetail')
+  getRenderResult() {
+    return this.props.result.map(t => {
+      return <ResultItem key={t._id} firstName={t.teacher_fullname} lastName={t.teacher_lastname} />
+    })
   }
 
   render() {
     return (
-      <tr style={rowTable}>
-        <td>
-          {this.props.firstName} {this.props.lastName}
-        </td>
-        <td style={tableIcon}>
-          <i
-            onClick={this.onClickIcon}
-            style={setColorIcon}
-            className="large material-icons">
-            send
-          </i>
-        </td>
-      </tr>
+      <tbody>
+        {this.getRenderResult()}
+      </tbody>
     )
   }
 }
@@ -56,22 +36,28 @@ SearchTeacherResult.PropTypes = {
 }
 
 export default createContainer((props) => {
+  const firstName = props.firstName;
+  const lastName = props.lastName;
   const teachers = Teachers.find().fetch();
   const findTeacher = (teachers) => {
     let result = [];
     teachers.map((t) => {
-      const includeFirstName = t.teacher_fullname.includes(props.firstName)
-      const includeLastName = t.teacher_lastname.includes(props.lastName)
-      if(includeFirstName || includeLastName) {
+      const includeFirstName = t.teacher_fullname.includes(firstName)
+      const includeLastName = t.teacher_lastname.includes(lastName)
+      if(includeFirstName && includeLastName) {
         result.push(t)
       }
     })
+    return result;
   }
-  let result = findTeacher(teachers)
-  console.log(result);
+  const isFirstNameEmpty = !firstName;
+  const isLastNameEmpty = !lastName;
 
+  let result = [];
+  if(!isFirstNameEmpty || !isLastNameEmpty) {
+    result = findTeacher(teachers)
+  }    
   return {
-    firstName: props.firstName,
-    lastName: props.lastName,
+    result,
   }
 }, SearchTeacherResult);
