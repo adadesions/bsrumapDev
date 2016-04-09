@@ -27,8 +27,8 @@ FlowRouter.route('/', {
   }
 })
 
-FlowRouter.route('/map1', {
-  name: 'map1',
+FlowRouter.route('/map', {
+  name: 'map',
   action(){
     mount(AppContainer, {
       content: <Map1 />
@@ -71,6 +71,35 @@ FlowRouter.route('/menu', {
     })
   }
 })
+
+FlowRouter.route('/ebook', {
+  name: 'ebook',
+  action(){
+    mount(AppContainer, {
+      content: <MenuPage />
+    })
+  }
+})
+
+FlowRouter.route('/website', {
+  name: 'website',
+  action(){
+    mount(AppContainer, {
+      content: <MenuPage />
+    })
+  }
+})
+
+FlowRouter.route('/contact', {
+  name: 'contact',
+  action(){
+    mount(AppContainer, {
+      content: <MenuPage />
+    })
+  }
+})
+
+
 
 const search = FlowRouter.group({
   prefix: '/search'

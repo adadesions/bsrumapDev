@@ -45,8 +45,7 @@ export default class Menu extends React.Component {
     }
     else {
       const path = FlowRouter.current().path;
-      const displayName = this.splitString(path);
-      console.log('test');
+      const displayName = this.splitString(path);      
       this.setState({
         displayName,
       })

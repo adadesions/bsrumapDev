@@ -44,7 +44,7 @@ export default class Login extends React.Component {
       email,
     },password, () => {
       if(Meteor.user()){
-        FlowRouter.go('map1');
+        FlowRouter.go('menu');
       }
       else {
         console.log("Not yet");
