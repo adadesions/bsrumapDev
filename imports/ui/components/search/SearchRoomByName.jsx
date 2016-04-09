@@ -21,7 +21,7 @@ export default class SearchRoomByName extends React.Component {
         <div style={paddingLayout} className="row">
           <div style={sizeInput} className="input-field col s12">
             <input style={sizeInput} id="roomName" type="text" className="validate"/>
-            <label style={sizeText} for="roomName">ชื่อห้อง</label>
+            <label style={sizeText} htmlFor="roomName">ชื่อห้อง</label>
           </div>
 
           <table style={marginTable} className="striped">

@@ -21,7 +21,7 @@ export default class SearchBuildingByName extends React.Component {
         <div style={paddingLayout} className="row">
           <div style={sizeInput} className="input-field col s12">
             <input style={sizeInput} id="buildingName" type="text" className="validate"/>
-            <label style={sizeText} for="buildingName">ชื่อาคาร</label>
+            <label style={sizeText} htmlFor="buildingName">ชื่อาคาร</label>
           </div>
 
           <table style={marginTable} className="striped">

@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
+import { createContainer } from 'meteor/react-meteor-data';
+import { Teachers } from '../../../api/collections/teachers.jsx';
+import { Mongo } from 'meteor/mongo';
 
 const paddingLayout = {
   padding: '4em',
@@ -30,28 +33,42 @@ const alignTableData = {
   textAlign: 'center',
 }
 
-export default class TeacherDetail extends React.Component {
+class TeacherDetail extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
   onClickBack(){
     FlowRouter.go('searchTeacher');
   }
 
   render() {
+    const tObj = this.props.tObj;
+    const firstName = tObj.teacher_fullname || '-';
+    const lastName = tObj.teacher_lastname || '-';
+    const facuilty = tObj.facuilty || '-';
+    const position = tObj.position || '-';
+    const building = tObj.building_id === '0' ? '-' : tObj.building_id;
+    const floor = tObj.floor_id === '0' ? '-' : tObj.floor_id;
+    const room = tObj.room_id === '0' ? '-' : tObj.room_id;
+    const phone = tObj.phone_number === '0' ? '-' : tObj.phone_number;
     return (
         <div style={paddingLayout} className="row">
           <table style={textSizeTable}>
             <tbody>
               <tr style={rowTable}>
-                <td style={alignTableData}>ดร.สมชาย ดำดี</td>
+                <td style={alignTableData}>
+                  {firstName} {lastName}
+                </td>
               </tr>
               <tr style={rowTable}>
-                <td>อาจารย์ คณะมนุษศาสตร์</td>
+                <td>อาจารย์ {facuilty}</td>
               </tr>
               <tr style={rowTable}>
-                <td>อาคาร 4 ชั้น 1 ห้อง 1</td>
+                <td>อาคาร {building} ชั้น {floor} ห้อง {room}</td>
               </tr>
               <tr style={rowTable}>
-                <td>ติดต่อภายใน 3300</td>
+                <td>ติดต่อภายใน {phone}</td>
               </tr>
             </tbody>
           </table>
@@ -60,3 +77,17 @@ export default class TeacherDetail extends React.Component {
     );
   }
 }
+
+TeacherDetail.PropTypes = {
+  tid: PropTypes.string.isRequire,
+  tObj: PropTypes.object.isRequire,
+}
+
+export default createContainer((props) => {
+  const tid = new Mongo.ObjectID(props.tid);
+  const tObj = Teachers.findOne({_id:tid});
+  return {
+    tid,
+    tObj,
+  }
+}, TeacherDetail)

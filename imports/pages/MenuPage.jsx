@@ -91,18 +91,23 @@ export default class MenuPage extends React.Component {
   }
 
   objectImage(id, name,imgDefault, imgSrc, x, y, yTarget, yEnd) {
-    let localImgSrc = imgSrc,
-      nameObject = name;
-    nameObject = new createjs.Bitmap(gallerry.getResult(id));
-    nameObject.x = x;
-    nameObject.y = y;
-    nameObject.scaleX = 0.7;
-    nameObject.scaleY = 0.7;
+    let objId = id,
+        localImgSrc = imgSrc,
+        nameObject = name;
+        nameObject = new createjs.Bitmap(gallerry.getResult(id));
+        nameObject.x = x;
+        nameObject.y = y;
+        nameObject.scaleX = 0.7;
+        nameObject.scaleY = 0.7;
+        nameObject.addEventListener('click', (route) => {
+          FlowRouter.go(`/${objId}`);
+        })
     stage.addChild(nameObject);
     createjs.Tween.get(nameObject, {loop: true})
           .to({y: yTarget}, 2500, createjs.Ease.getPowInOut(2))
           .to({y: yEnd}, 2500, createjs.Ease.getPowInOut(2))
           .to({y: y}, 2500, createjs.Ease.getPowInOut(2))
+
   }
 
   tick() {

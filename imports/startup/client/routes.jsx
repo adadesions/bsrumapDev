@@ -26,8 +26,8 @@ FlowRouter.route('/', {
   }
 })
 
-FlowRouter.route('/map1', {
-  name: 'map1',
+FlowRouter.route('/map', {
+  name: 'map',
   action(){
     mount(AppContainer, {
       content: <Map1 />
@@ -71,6 +71,52 @@ FlowRouter.route('/menu', {
   }
 })
 
+FlowRouter.route('/ebook', {
+  name: 'ebook',
+  action(){
+    mount(AppContainer, {
+      content: <MenuPage />
+    })
+  }
+})
+
+
+FlowRouter.route('/website', {
+  name: 'website',
+  action(){
+    mount(AppContainer, {
+      content: <MenuPage />
+    })
+  }
+})
+
+FlowRouter.route('/floorBuilding', {
+  name: 'floorBuilding',
+  action(){
+    mount(AppContainer, {
+      content: <FloorBuilding />
+    })
+  }
+})
+
+FlowRouter.route('/floorBuildingDetail', {
+  name: 'floorBuildingDetail',
+  action(){
+    mount(AppContainer, {
+      content: <FloorBuildingDetail />
+    })
+  }
+})
+
+FlowRouter.route('/contact', {
+  name: 'contact',
+  action(){
+    mount(AppContainer, {
+      content: <MenuPage />
+    })
+  }
+})
+
 const search = FlowRouter.group({
   prefix: '/search'
 })
@@ -93,11 +139,11 @@ search.route('/teacher', {
   }
 })
 
-search.route('/teacher/detail', {
+search.route('/teacher/detail/:tid', {
   name: 'teacherDetail',
-  action(){
+  action(params){
     mount(AppContainer, {
-      content: <TeacherDetail />
+      content: <TeacherDetail tid={ params.tid }/>
     })
   }
 })

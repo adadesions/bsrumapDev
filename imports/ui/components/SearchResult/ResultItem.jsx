@@ -21,16 +21,21 @@ export default class ResultItem extends React.Component {
     this.state = {
       firstName: this.props.firstName,
       lastName: this.props.lastName,
+      _id: this.props._id,
     }
+    this.onClickIcon = this.onClickIcon.bind(this);
   }
 
   onClickIcon() {
-    FlowRouter.go('teacherDetail')
+    const tid = this.state._id._str    
+    const path = FlowRouter.path('teacherDetail',{ tid })
+    FlowRouter.go(path)
   }
 
   componentWillReceiveProps() {
     const firstName = this.props.firstName;
     const lastName = this.props.lastName;
+    const _id = this.props._id;
     this.setState({
       firstName,
       lastName
@@ -59,4 +64,5 @@ export default class ResultItem extends React.Component {
 ResultItem.PropTypes = {
   firstName: PropTypes.string.isRequire,
   lastName: PropTypes.string.isRequire,
+  _id: PropTypes.string.isRequire,
 }

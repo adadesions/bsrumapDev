@@ -17,7 +17,7 @@ export default class SearchTeacherResult extends React.Component {
 
   getRenderResult() {
     return this.props.result.map(t => {
-      return <ResultItem key={t._id} firstName={t.teacher_fullname} lastName={t.teacher_lastname} />
+      return <ResultItem key={t._id} _id={t._id} firstName={t.teacher_fullname} lastName={t.teacher_lastname} />
     })
   }
 
@@ -56,7 +56,7 @@ export default createContainer((props) => {
   let result = [];
   if(!isFirstNameEmpty || !isLastNameEmpty) {
     result = findTeacher(teachers)
-  }    
+  }
   return {
     result,
   }
