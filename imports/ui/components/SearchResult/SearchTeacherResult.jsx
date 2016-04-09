@@ -57,6 +57,9 @@ export default createContainer((props) => {
   if(!isFirstNameEmpty || !isLastNameEmpty) {
     result = findTeacher(teachers)
   }
+  else {
+    result = teachers
+  }
   return {
     result,
   }
