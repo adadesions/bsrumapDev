@@ -56,9 +56,7 @@ export default createContainer((props) => {
   let result = [];
   if(!isFirstNameEmpty || !isLastNameEmpty) {
     result = findTeacher(teachers)
-  }
-  // result = Lazy(result).without('').values;
-  console.log(result);
+  }    
   return {
     result,
   }
