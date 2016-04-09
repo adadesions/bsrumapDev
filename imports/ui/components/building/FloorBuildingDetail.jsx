@@ -31,6 +31,10 @@ const alignTableData = {
 }
 
 export default class FloorBuildingDetail extends React.Component {
+  constructor() {
+    super();
+    this.onClickBack = this.onClickBack.bind(this);
+  }
 
   onClickBack(){
     FlowRouter.go('floorBuilding');
