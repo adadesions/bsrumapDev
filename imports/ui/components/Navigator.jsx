@@ -46,10 +46,15 @@ export default class Menu extends React.Component {
     else {
       const path = FlowRouter.current().path;
       const displayName = this.splitString(path);
+      console.log('test');
       this.setState({
         displayName,
       })
     }
+  }
+
+  onClickMenu(){
+    FlowRouter.go('menu');
   }
 
   render() {
@@ -59,7 +64,7 @@ export default class Menu extends React.Component {
             <div className="nav-wrapper">
               <a href="#" className="brand-logo">{this.state.displayName}</a>
               <ul className="right">
-                <li><a href="/menu"><i className="material-icons">view_module</i></a></li>
+                <li onClick={this.onClickMenu}><a href="/menu"><i id="icon" className="material-icons">view_module</i></a></li>
               </ul>
             </div>
           </nav>

@@ -9,13 +9,13 @@ import Map2 from '../../pages/Map2.jsx';
 import Login from '../../pages/Login.jsx';
 import Register from '../../pages/Register.jsx';
 import MainSearch from '../../pages/MainSearch.jsx';
+import MenuPage from '../../pages/MenuPage.jsx';
 import SearchTeacher from '../../ui/components/SearchTeacher.jsx';
 import SearchRoomByNumber from '../../ui/components/SearchRoomByNumber.jsx';
 import SearchBuildingByName from '../../ui/components/SearchBuildingByName.jsx';
 import SearchRoomByName from '../../ui/components/SearchRoomByName.jsx';
 import TeacherDetail from '../../ui/components/TeacherDetail.jsx';
 import BuildingDescription from '../../pages/BuildingDescription.jsx';
-import MenuPage from '../../pages/MenuPage.jsx';
 
 
 FlowRouter.route('/', {

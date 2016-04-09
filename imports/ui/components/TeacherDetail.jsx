@@ -9,7 +9,7 @@ const textSizeTable = {
 }
 const rowTable = {
   display: 'flex',
-  justifyContent: 'space-between',
+  justifyContent: 'center',
   paddingLeft: '2em',
   paddingRight: '2em',
   alignItems: 'center',
@@ -26,6 +26,9 @@ const styleTextButton = {
   marginTop: '0.8em',
   fontWeight: 'bold',
 }
+const alignTableData = {
+  textAlign: 'center',
+}
 
 export default class TeacherDetail extends React.Component {
 
@@ -36,16 +39,19 @@ export default class TeacherDetail extends React.Component {
   render() {
     return (
         <div style={paddingLayout} className="row">
-          <table style={textSizeTable} className="striped">
+          <table style={textSizeTable}>
             <tbody>
               <tr style={rowTable}>
-                <td>Alvin</td>
+                <td style={alignTableData}>ดร.สมชาย ดำดี</td>
               </tr>
               <tr style={rowTable}>
-                <td>Alan</td>
+                <td>อาจารย์ คณะมนุษศาสตร์</td>
               </tr>
               <tr style={rowTable}>
-                <td>Jonathan</td>
+                <td>อาคาร 4 ชั้น 1 ห้อง 1</td>
+              </tr>
+              <tr style={rowTable}>
+                <td>ติดต่อภายใน 3300</td>
               </tr>
             </tbody>
           </table>
