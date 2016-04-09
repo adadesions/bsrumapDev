@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
-import SearchTeacherResult from './SearchResult/SearchTeacherResult.jsx';
+import SearchTeacherResult from '../SearchResult/SearchTeacherResult.jsx';
 
 const sizeInput = {
   height: '3em',

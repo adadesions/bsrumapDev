@@ -10,13 +10,14 @@ import Login from '../../pages/Login.jsx';
 import Register from '../../pages/Register.jsx';
 import MainSearch from '../../pages/MainSearch.jsx';
 import MenuPage from '../../pages/MenuPage.jsx';
-import SearchTeacher from '../../ui/components/SearchTeacher.jsx';
-import SearchRoomByNumber from '../../ui/components/SearchRoomByNumber.jsx';
-import SearchBuildingByName from '../../ui/components/SearchBuildingByName.jsx';
-import SearchRoomByName from '../../ui/components/SearchRoomByName.jsx';
-import TeacherDetail from '../../ui/components/TeacherDetail.jsx';
+import SearchTeacher from '../../ui/components/search/SearchTeacher.jsx';
+import SearchRoomByNumber from '../../ui/components/search/SearchRoomByNumber.jsx';
+import SearchBuildingByName from '../../ui/components/search/SearchBuildingByName.jsx';
+import SearchRoomByName from '../../ui/components/search/SearchRoomByName.jsx';
+import TeacherDetail from '../../ui/components/search/TeacherDetail.jsx';
 import BuildingDescription from '../../pages/BuildingDescription.jsx';
-
+import FloorBuilding from '../../ui/components/building/FloorBuilding.jsx';
+import FloorBuildingDetail from '../../ui/components/building/FloorBuildingDetail.jsx';
 
 FlowRouter.route('/', {
   name: 'root',
@@ -81,11 +82,30 @@ FlowRouter.route('/ebook', {
   }
 })
 
+FlowRouter.route('/floorBuilding', {
+  name: 'floorBuilding',
+  action(){
+    mount(AppContainer, {
+      content: <FloorBuilding />
+    })
+  }
+})
+
 FlowRouter.route('/website', {
   name: 'website',
   action(){
     mount(AppContainer, {
       content: <MenuPage />
+    })
+  }
+})
+
+
+FlowRouter.route('/floorBuildingDetail', {
+  name: 'floorBuildingDetail',
+  action(){
+    mount(AppContainer, {
+      content: <FloorBuildingDetail />
     })
   }
 })
@@ -98,8 +118,6 @@ FlowRouter.route('/contact', {
     })
   }
 })
-
-
 
 const search = FlowRouter.group({
   prefix: '/search'
