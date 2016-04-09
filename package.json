@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "hammerjs": "^2.0.6",
+    "lazy.js": "^0.4.2",
     "meteor-node-stubs": "~0.2.0",
     "react": "^0.15.0",
     "react-addons-pure-render-mixin": "^0.14.8",
