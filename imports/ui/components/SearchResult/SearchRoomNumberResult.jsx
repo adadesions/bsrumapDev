@@ -98,7 +98,6 @@ export default createContainer((props) => {
   else {
     result = rooms;
   }
-  console.log(result);
   return {
     result,
   }
