@@ -2,16 +2,11 @@ import React from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
 const paddingLayout = {
-  padding: '4em',
-}
-const textSizeTable = {
-  fontSize: '40px',
+  padding: '1em',
 }
 const rowTable = {
   display: 'flex',
-  justifyContent: 'center',
-  paddingLeft: '2em',
-  paddingRight: '2em',
+  justifyContent: 'space-between',
   alignItems: 'center',
 }
 const styleButton = {
@@ -26,10 +21,18 @@ const styleTextButton = {
   marginTop: '0.8em',
   fontWeight: 'bold',
 }
-const alignTableData = {
-  textAlign: 'center',
+const alignRoomName = {
+  width: '63%',
+  wrapWord: 'break-word',
+  fontSize: '22px',
 }
-
+const alignRoomNumber = {
+  width: '37%',
+  wrapWord: 'break-word',
+  textAlign: 'center',
+  fontSize: '26px',
+  fontWeight: 'bold',
+}
 export default class FloorBuildingDetail extends React.Component {
   constructor() {
     super();
@@ -43,16 +46,11 @@ export default class FloorBuildingDetail extends React.Component {
   render() {
     return (
         <div style={paddingLayout} className="row">
-          <table style={textSizeTable} className="striped">
+          <table className="striped">
             <tbody>
               <tr style={rowTable}>
-                <td>Alvin</td>
-              </tr>
-              <tr style={rowTable}>
-                <td>Alvin</td>
-              </tr>
-              <tr style={rowTable}>
-                <td>Alvin</td>
+                <td style={alignRoomNumber}>231</td>
+                <td style={alignRoomName}>ห้องอาจารย์คณะวิทย์</td>
               </tr>
             </tbody>
           </table>

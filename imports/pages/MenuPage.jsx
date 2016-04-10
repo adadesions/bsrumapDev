@@ -97,8 +97,8 @@ export default class MenuPage extends React.Component {
         nameObject = new createjs.Bitmap(gallerry.getResult(id));
         nameObject.x = x;
         nameObject.y = y;
-        nameObject.scaleX = 0.4;
-        nameObject.scaleY = 0.4;
+        nameObject.scaleX = 0.8;
+        nameObject.scaleY = 0.8;
         nameObject.addEventListener('click', (route) => {
           FlowRouter.go(`/${objId}`);
         })
@@ -117,7 +117,7 @@ export default class MenuPage extends React.Component {
   render() {
     return (
       <div className="menu-layout" style={rowTopMenu}>
-          <canvas id="menuTop" width="950px" height="450px"></canvas>
+          <canvas id="menuTop" width="750px" height="250px"></canvas>
       </div>
     )
   }
