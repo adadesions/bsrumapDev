@@ -1,21 +1,17 @@
 import React from 'react';
 
 const rowTopMenu = {
-  background: '#ffebee',
   display: 'flex',
   justifyContent: 'space-around',
   flexFlow: 'row',
-  height: '90vh',
+  height: '100%',
   alignItems: 'center',
-  background: '-moz-radial-gradient(0% 100%, ellipse cover, rgba(255,195,160,.2) 10%,rgba(229,175,144,0) 40%),-moz-linear-gradient(top,  rgba(160,122,100,.25) 0%, rgba(96,73,60,.4) 100%), -moz-linear-gradient(-45deg,  #261d18 0%, #ff815e 100%)',
-	background: '-webkit-radial-gradient(0% 100%, ellipse cover, rgba(255,195,160,.2) 10%,rgba(229,175,144,0) 40%), -webkit-linear-gradient(top,  rgba(160,122,100,.25) 0%,rgba(96,73,60,.4) 100%), -webkit-linear-gradient(-45deg,  #261d18 0%,#ff815e 100%)',
-	background: '-o-radial-gradient(0% 100%, ellipse cover, rgba(255,195,160,.2) 10%,rgba(229,175,144,0) 40%), -o-linear-gradient(top,  rgba(160,122,100,.25) 0%,rgba(96,73,60,.4) 100%), -o-linear-gradient(-45deg,  #261d18 0%,#ff815e 100%)',
-	background: '-ms-radial-gradient(0% 100%, ellipse cover, rgba(255,195,160,.2) 10%,rgba(229,175,144,0) 40%), -ms-linear-gradient(top,  rgba(160,122,100,.25) 0%,rgba(96,73,60,.4) 100%), -ms-linear-gradient(-45deg,  #261d18 0%,#ff815e 100%)',
-	background: '-webkit-radial-gradient(0% 100%, ellipse cover, rgba(255,195,160,.2) 10%,rgba(229,175,144,0) 40%), linear-gradient(to bottom,  rgba(160,122,100,.25) 0%,rgba(96,73,60,.4) 100%), linear-gradient(135deg,  #261d18 0%,#ff815e 100%)',
-}
-const sizeImg = {
-  width: '10em',
-  height: '10em',
+  background: '#092756',
+  background: '-moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #670d10 0%, #092756 100%)',
+	background: '-webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg,  #670d10 0%,#092756 100%)',
+	background: '-o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg,  #670d10 0%,#092756 100%)',
+	background: '-ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #670d10 0%,#092756 100%)',
+	background: '-webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%)',
 }
 
 let stage,
@@ -52,7 +48,7 @@ export default class MenuPage extends React.Component {
                     search,
                     '/iconMenu/search.png',
                     gallerry.getResult('search'),
-                    80,
+                    50,
                     20,
                     60,
                     50);
@@ -60,7 +56,7 @@ export default class MenuPage extends React.Component {
                     map,
                     '/iconMenu/map.png',
                     gallerry.getResult('map'),
-                    410,
+                    280,
                     60,
                     20,
                     40);
@@ -68,7 +64,7 @@ export default class MenuPage extends React.Component {
                     ebook,
                     '/iconMenu/ebook.png',
                     gallerry.getResult('ebook'),
-                    730,
+                    500,
                     35,
                     60,
                     20);
@@ -76,18 +72,18 @@ export default class MenuPage extends React.Component {
                     website,
                     '/iconMenu/web.png',
                     gallerry.getResult('website'),
-                    250,
-                    230,
-                    200,
-                    260);
+                    160,
+                    180,
+                    150,
+                    190);
     this.objectImage('contact',
                     contact,
                     '/iconMenu/contact.png',
                     gallerry.getResult('contact'),
-                    550,
-                    280,
-                    260,
-                    220);
+                    380,
+                    190,
+                    150,
+                    170);
   }
 
   objectImage(id, name,imgDefault, imgSrc, x, y, yTarget, yEnd) {
@@ -97,16 +93,16 @@ export default class MenuPage extends React.Component {
         nameObject = new createjs.Bitmap(gallerry.getResult(id));
         nameObject.x = x;
         nameObject.y = y;
-        nameObject.scaleX = 0.8;
-        nameObject.scaleY = 0.8;
+        nameObject.scaleX = 0.5;
+        nameObject.scaleY = 0.5;
         nameObject.addEventListener('click', (route) => {
           FlowRouter.go(`/${objId}`);
         })
     stage.addChild(nameObject);
     createjs.Tween.get(nameObject, {loop: true})
-          .to({y: yTarget}, 2500, createjs.Ease.getPowInOut(2))
-          .to({y: yEnd}, 2500, createjs.Ease.getPowInOut(2))
-          .to({y: y}, 2500, createjs.Ease.getPowInOut(2))
+          .to({y: yTarget}, 5500, createjs.Ease.getPowInOut(1))
+          .to({y: yEnd}, 5500, createjs.Ease.getPowInOut(1))
+          .to({y: y}, 5500, createjs.Ease.getPowInOut(1))
 
   }
 
@@ -117,7 +113,7 @@ export default class MenuPage extends React.Component {
   render() {
     return (
       <div className="menu-layout" style={rowTopMenu}>
-          <canvas id="menuTop" width="750px" height="250px"></canvas>
+        <canvas id="menuTop" width="650px" height="294px"></canvas>
       </div>
     )
   }
