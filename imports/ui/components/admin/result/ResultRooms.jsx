@@ -4,6 +4,9 @@ import IconItem from '../result/IconItem.jsx'
 const textDetailTable = {
   fontSize: '10px',
 }
+const alignText = {
+  textAlign: 'center',
+}
 export default class ResultRooms extends React.Component {
   constructor(props) {
     super(props);
@@ -14,10 +17,10 @@ export default class ResultRooms extends React.Component {
     return this.props.result.map((r,i) => {
       return (
         <tr key={r._id} style={textDetailTable}>
-          <td>{ i+1 }</td>
-          <td>{ r.room_id }</td>
-          <td>{ r.building_id }</td>
-          <td>{ r.description }</td>
+          <td style={alignText} >{ i+1 }</td>
+          <td style={alignText} >{ r.room_id }</td>
+          <td style={alignText} >{ r.building_id }</td>
+          <td style={alignText} >{ r.description }</td>
           <IconItem id={ r._id } collection="rooms" />
         </tr>
       )

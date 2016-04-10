@@ -4,6 +4,9 @@ import IconItem from '../result/IconItem.jsx'
 const textDetailTable = {
   fontSize: '10px',
 }
+const alignText = {
+  textAlign: 'center',
+}
 export default class ResultBuilding extends React.Component {
   constructor(props) {
     super(props);
@@ -14,13 +17,13 @@ export default class ResultBuilding extends React.Component {
     return this.props.result.map((r,i) => {
       return (
         <tr key={r._id} style={textDetailTable}>
-          <td>{ i+1 }</td>
-          <td>{ r.building_id }</td>
-          <td>{ r.building_name }</td>
-          <td>{ r.description }</td>
-          <td>{ r.picture }</td>
-          <td>{ r.map_point }</td>
-          <td>{ r.floor_sum }</td>
+          <td style={alignText} >{ i+1 }</td>
+          <td style={alignText} >{ r.building_id }</td>
+          <td style={alignText} >{ r.building_name }</td>
+          <td style={alignText} >{ r.description }</td>
+          <td style={alignText} >{ r.picture }</td>
+          <td style={alignText} >{ r.map_point }</td>
+          <td style={alignText} >{ r.floor_sum }</td>
           <IconItem id={ r._id } collection="building" />
         </tr>
       )

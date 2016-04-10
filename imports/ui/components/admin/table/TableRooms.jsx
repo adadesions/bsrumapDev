@@ -11,16 +11,21 @@ const paddingLayout = {
 const textHeadTable = {
   fontSize: '14px',
 }
+const alignText = {
+  textAlign: 'center',
+}
+
 class TableRooms extends React.Component {
+
   render() {
     return (
       <div style={paddingLayout} className="row">
         <table className="striped">
           <thead>
             <tr style={textHeadTable}>
-              <th data-field="id">ID</th>
-              <th data-field="name">Rooms ID</th>
-              <th data-field="name">Building ID</th>
+              <th style={alignText} data-field="id">ID</th>
+              <th style={alignText} data-field="name">Rooms ID</th>
+              <th style={alignText} data-field="name">Building ID</th>
               <th data-field="name">Discription</th>
             </tr>
           </thead>
