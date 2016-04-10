@@ -26,15 +26,37 @@ const paddingLayout = {
   paddingTop: '0.5em',
 }
 export default class FloorBuilding extends React.Component {
+  constructor(props) {
+    super(props);
+    this.getRenderFloors = this.getRenderFloors.bind(this);
+  }
+
+  getRenderFloors() {
+    return this.props.floors.map(f => {
+      return (
+        <div key={ f._id } style={paddingLayout}>
+          <div style={justifyCard} className="card-panel teal">
+            <span style={setTextFloor} className="white-text">
+              Floor { f.floor_id || '-'}
+            </span>
+            <span style={setTextNameFloor} className="white-text">
+              { f.description }
+            </span>
+          </div>
+        </div>
+      )
+    })
+  }
 
   render() {
     return (
-      <div style={paddingLayout}>
-        <div style={justifyCard} className="card-panel teal">
-          <span style={setTextFloor} className="white-text">Floor 1</span>
-          <span style={setTextNameFloor} className="white-text">ชั้นโรงอาหาร</span>
-        </div>
-      </div>
-    );
+      <section>
+        {this.getRenderFloors()}
+      </section>
+    )
   }
+}
+
+FloorBuilding.PropTypes = {
+  floors: PropTypes.array.isRequire
 }

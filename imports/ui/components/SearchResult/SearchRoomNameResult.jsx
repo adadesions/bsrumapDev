@@ -119,7 +119,7 @@ export default createContainer((props) => {
     result = findRoomName(rooms);
   }
   else {
-    result = rooms;
+    result = Rooms.find({}, { limit: 100 }).fetch();
   }
   return {
     result,

@@ -58,7 +58,7 @@ export default createContainer((props) => {
     result = findTeacher(teachers)
   }
   else {
-    result = teachers
+    result = Teachers.find({}, { limit: 100 }).fetch();
   }
   return {
     result,
