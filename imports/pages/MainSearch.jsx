@@ -2,7 +2,7 @@ import React from 'react';
 import SearchOption from '../ui/components/search/SearchOption.jsx';
 
 const searchLayout = {
-  padding: '3em',
+  padding: '1em',
 }
 
 export default class MainSearch extends React.Component {

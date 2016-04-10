@@ -3,13 +3,16 @@ import SearchBuildingResult from '../SearchResult/SearchBuildingResult.jsx';
 
 const sizeInput = {
   height: '3em',
-  fontSize: '32px',
+  fontSize: '22px',
 }
 const sizeText = {
-  fontSize: '32px',
+  fontSize: '22px',
 }
 const paddingLayout = {
-  padding: '4em',
+  paddingLeft: '1em',
+  paddingRight: '1em',
+  paddingBottom: '1em',
+  paddingTop: '2em',
 }
 const marginTable = {
   marginTop : '4em',
@@ -45,7 +48,7 @@ export default class SearchBuildingByName extends React.Component {
             />
           <label style={sizeText} htmlFor="buildingName">ชื่ออาคาร</label>
           </div>
-          <table style={marginTable} className="striped">            
+          <table style={marginTable} className="striped">
             <SearchBuildingResult buildingName={this.state.buildingName} />
           </table>
         </div>

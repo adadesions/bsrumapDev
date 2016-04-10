@@ -10,11 +10,13 @@ class BuildingDescription extends React.Component {
     return (
       <section>
         <center>
-          <h1>Description</h1>
-          <h3>
-            Building {this.props.buildingId}
-          </h3>
-          <img src={this.props.buildingImg} alt="" />
+          <div>
+            <h1>Description</h1>
+            <h3>
+              Building {this.props.buildingId}
+            </h3>
+            <img src={this.props.buildingImg} alt="" />
+          </div>
         </center>
       </section>
     )
