@@ -18,16 +18,16 @@ export default class MenuAdmin extends React.Component {
   render() {
     return (
       <div style={paddingLayout}>
-        <div style={justifyCard} className="card-panel teal">
+        <div id='building' style={justifyCard} className="card-panel teal">
           <span style={setTextFloor} className="white-text">Building</span>
         </div>
-        <div style={justifyCard} className="card-panel teal">
+        <div id='floors' style={justifyCard} className="card-panel teal">
           <span style={setTextFloor} className="white-text">Floors</span>
         </div>
-        <div style={justifyCard} className="card-panel teal">
+        <div id='rooms' style={justifyCard} className="card-panel teal">
           <span style={setTextFloor} className="white-text">Rooms</span>
         </div>
-        <div style={justifyCard} className="card-panel teal">
+        <div id='teachers' style={justifyCard} className="card-panel teal">
           <span style={setTextFloor} className="white-text">Teachers</span>
         </div>
       </div>

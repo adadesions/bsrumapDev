@@ -96,7 +96,12 @@ export default class MenuPage extends React.Component {
         nameObject.scaleX = 0.5;
         nameObject.scaleY = 0.5;
         nameObject.addEventListener('click', (route) => {
-          FlowRouter.go(`/${objId}`);
+          if(objId === 'contact') {
+            FlowRouter.go(`/admin`);
+          }
+          else {
+            FlowRouter.go(`/${objId}`);  
+          }
         })
     stage.addChild(nameObject);
     createjs.Tween.get(nameObject, {loop: true})
