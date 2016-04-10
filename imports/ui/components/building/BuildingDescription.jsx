@@ -30,7 +30,8 @@ BuildingDescription.PropTypes = {
 
 export default createContainer(() => {
   const buildingId = FlowRouter.getParam('id');
-  const building = Building.findOne({building_id: buildingId});
+  const building = Building.findOne({building_id: buildingId});  
+
   let buildingImg = '';
   if (building){
     buildingImg = `/buildingDescription/${building.description}`;
