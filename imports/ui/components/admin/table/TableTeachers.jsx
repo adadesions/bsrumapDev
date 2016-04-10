@@ -1,5 +1,10 @@
 import React from 'react';
 import ResultTeachers from '../result/ResultTeachers.jsx'
+import { createContainer } from 'meteor/react-meteor-data';
+
+// Collection
+import { Teachers } from '../../../../api/collections/teachers.jsx';
+
 const paddingLayout = {
   padding: '1em',
 }
@@ -25,11 +30,15 @@ export default class TableTeachers extends React.Component {
               <th data-field="id">Room ID</th>
             </tr>
           </thead>
-          <tbody>
-            <ResultTeachers />
-          </tbody>
+            <ResultTeachers result={ this.props.result }/>          
         </table>
       </div>
     )
   }
 }
+
+export default createContainer(() => {
+  return {
+    result: Teachers.find().fetch()
+  }
+}, TableTeachers);

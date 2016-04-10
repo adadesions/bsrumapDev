@@ -1,13 +1,17 @@
 import React from 'react';
 import ResultRooms from '../result/ResultRooms.jsx'
+import { createContainer } from 'meteor/react-meteor-data';
+
+// Collection
+import { Rooms } from '../../../../api/collections/rooms.jsx';
+
 const paddingLayout = {
   padding: '1em',
 }
 const textHeadTable = {
   fontSize: '14px',
 }
-export default class TableRooms extends React.Component {
-
+class TableRooms extends React.Component {
   render() {
     return (
       <div style={paddingLayout} className="row">
@@ -20,11 +24,15 @@ export default class TableRooms extends React.Component {
               <th data-field="name">Discription</th>
             </tr>
           </thead>
-          <tbody>
-            <ResultRooms />
-          </tbody>
+            <ResultRooms result={ this.props.result }/>
         </table>
       </div>
     )
   }
 }
+
+export default createContainer(() => {
+  return {
+    result: Rooms.find().fetch()
+  }
+}, TableRooms);

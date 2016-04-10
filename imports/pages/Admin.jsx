@@ -67,6 +67,8 @@ export default class Admin extends React.Component {
             { this.getRenderTables() }
           </div>
         </div>
+      
+
       </div>
     );
   }

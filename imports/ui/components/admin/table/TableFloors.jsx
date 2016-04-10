@@ -1,12 +1,17 @@
 import React from 'react';
-import ResultFloors from '../result/ResultFloors.jsx'
+import ResultFloors from '../result/ResultFloors.jsx';
+import { createContainer } from 'meteor/react-meteor-data';
+
+// Collections
+import { Floors } from '../../../../api/collections/floors.jsx';
+
 const paddingLayout = {
   padding: '1em',
 }
 const textHeadTable = {
   fontSize: '14px',
 }
-export default class TableFloors extends React.Component {
+class TableFloors extends React.Component {
 
   render() {
     return (
@@ -20,11 +25,15 @@ export default class TableFloors extends React.Component {
                 <th data-field="name">Discription</th>
             </tr>
           </thead>
-          <tbody>
-            <ResultFloors />
-          </tbody>
+            <ResultFloors result={this.props.result} />          
         </table>
       </div>
     )
   }
 }
+
+export default createContainer(() => {
+  return {
+    result: Floors.find().fetch()
+  }
+}, TableFloors);
