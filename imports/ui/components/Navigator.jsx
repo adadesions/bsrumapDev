@@ -52,6 +52,22 @@ export default class Menu extends React.Component {
     }
   }
 
+  getRenderMenuButton() {
+    const isRoot = FlowRouter.getRouteName() === 'root';
+    if(!isRoot) {
+      return (
+        <li onClick={this.onClickMenu}>
+          <a href="/menu">
+            <i id="icon" className="material-icons">view_module</i>
+          </a>
+        </li>
+      )
+    }
+    else {
+      return <li></li>
+    }
+  }
+
   onClickMenu(){
     FlowRouter.go('menu');
   }
@@ -63,7 +79,7 @@ export default class Menu extends React.Component {
             <div className="nav-wrapper">
               <a href="#" className="brand-logo">{this.state.displayName}</a>
               <ul className="right">
-                <li onClick={this.onClickMenu}><a href="/menu"><i id="icon" className="material-icons">view_module</i></a></li>
+                {this.getRenderMenuButton()}
               </ul>
             </div>
           </nav>

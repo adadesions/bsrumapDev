@@ -43,7 +43,7 @@ export default class Register extends React.Component {
       username,
       password,
     })
-    FlowRouter.go('map1');
+    FlowRouter.go('menu');
   }
   render() {
     return(

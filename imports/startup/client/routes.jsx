@@ -84,9 +84,7 @@ FlowRouter.route('/ebook', {
 FlowRouter.route('/website', {
   name: 'website',
   action(){
-    mount(AppContainer, {
-      content: <MenuPage />
-    })
+    window.open('http://adacode.io', '_system');
   }
 })
 
