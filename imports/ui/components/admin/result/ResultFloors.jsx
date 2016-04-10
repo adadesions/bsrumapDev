@@ -21,7 +21,7 @@ export default class ResultFloors extends React.Component {
           <td style={alignText} >{ r.floor_id }</td>
           <td style={alignText} >{ r.building_id }</td>
           <td style={alignText} >{ r.description }</td>
-          <IconItem id={ r._id } collection="floors" />
+          <IconItem id={ r._id._str } collection="floors" />
         </tr>
       )
     })

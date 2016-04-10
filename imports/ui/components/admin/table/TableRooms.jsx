@@ -26,7 +26,7 @@ class TableRooms extends React.Component {
               <th style={alignText} data-field="id">ID</th>
               <th style={alignText} data-field="name">Rooms ID</th>
               <th style={alignText} data-field="name">Building ID</th>
-              <th data-field="name">Discription</th>
+              <th data-field="name">Description</th>
             </tr>
           </thead>
             <ResultRooms result={ this.props.result }/>

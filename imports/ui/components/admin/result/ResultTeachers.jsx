@@ -27,7 +27,7 @@ export default class ResultTeachers extends React.Component {
           <td style={alignText} >{ r.building_id }</td>
           <td style={alignText} >{ r.floor_id }</td>
           <td style={alignText} >{ r.room_id }</td>
-          <IconItem id={ r._id } collection="teachers" />
+          <IconItem id={ r._id._str } collection="teachers" />
         </tr>
       )
     })

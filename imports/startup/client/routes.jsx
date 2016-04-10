@@ -17,6 +17,7 @@ import SearchRoomByName from '../../ui/components/search/SearchRoomByName.jsx';
 import TeacherDetail from '../../ui/components/search/TeacherDetail.jsx';
 import BuildingInformation from '../../pages/BuildingInformation.jsx';
 import Admin from '../../pages/Admin.jsx';
+import AdminEdit from '../../pages/AdminEdit.jsx';
 
 FlowRouter.route('/', {
   name: 'root',
@@ -72,14 +73,6 @@ FlowRouter.route('/menu', {
   }
 })
 
-FlowRouter.route('/admin', {
-  name: 'admin',
-  action(){
-    mount(AppContainer, {
-      content: <Admin />
-    })
-  }
-})
 
 FlowRouter.route('/ebook', {
   name: 'ebook',
@@ -193,6 +186,28 @@ building.route('/:id', {
   action(params) {
     mount(AppContainer, {
       content: <BuildingInformation />
+    })
+  }
+})
+
+const admin = FlowRouter.group({
+  prefix: '/admin'
+})
+
+admin.route('/', {
+  name: 'admin',
+  action() {
+    mount(AppContainer, {
+      content: <Admin />
+    })
+  }
+})
+
+admin.route('/edit/:collection/:id', {
+  name: 'adminEdit' ,
+  action(params) {
+    mount(AppContainer, {
+      content: <AdminEdit id={params.id} collection={params.collection} />
     })
   }
 })

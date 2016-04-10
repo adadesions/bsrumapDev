@@ -30,7 +30,8 @@ class TableBuilding extends React.Component {
                 <th style={alignText} data-field="id">ID</th>
                 <th style={alignText} data-field="name">Building ID</th>
                 <th style={alignText} data-field="id">Building Name</th>
-                <th data-field="name">Discription</th>
+                <th style={alignText} data-field="name">Description</th>
+                <th style={alignText} data-field="name">Picture</th>
                 <th style={alignText} data-field="name">Map Point</th>
                 <th style={alignText} data-field="id">Floor Sum</th>
             </tr>

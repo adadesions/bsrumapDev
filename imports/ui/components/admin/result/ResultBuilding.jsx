@@ -24,7 +24,7 @@ export default class ResultBuilding extends React.Component {
           <td style={alignText} >{ r.picture }</td>
           <td style={alignText} >{ r.map_point }</td>
           <td style={alignText} >{ r.floor_sum }</td>
-          <IconItem id={ r._id } collection="building" />
+          <IconItem id={ r._id._str } collection="building" />
         </tr>
       )
     })
