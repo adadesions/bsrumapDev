@@ -5,6 +5,11 @@ import TableFloors from '../ui/components/admin/table/TableFloors.jsx';
 import TableRooms from '../ui/components/admin/table/TableRooms.jsx';
 import TableTeachers from '../ui/components/admin/table/TableTeachers.jsx';
 
+import EditBuilding from '../ui/components/admin/edit/EditBuilding.jsx';
+import EditFloors from '../ui/components/admin/edit/EditFloors.jsx';
+import EditRooms from '../ui/components/admin/edit/EditRooms.jsx';
+import EditTeachers from '../ui/components/admin/edit/EditTeachers.jsx';
+
 export default class Admin extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +30,7 @@ export default class Admin extends React.Component {
     const floors = $('#floors');
     const rooms = $('#rooms');
     const teachers = $('#teachers');
-    
+
     binding(building, 'building');
     binding(floors, 'floors');
     binding(rooms, 'rooms');
