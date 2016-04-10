@@ -3,10 +3,26 @@ import { createContainer } from 'meteor/react-meteor-data';
 import { Building } from '../../../api/collections/building.jsx';
 
 const tableHead = {
-  'fontSize': '24',
+  'fontSize': '20',
   'textAlign': 'center',
 }
-
+const setTextNameNumber = {
+  fontSize: '20px',
+  width: '20%',
+  wrapWord: 'break-word',
+  textAlign: 'center',
+}
+const setTextName = {
+  fontSize: '20px',
+  width: '80%',
+  wrapWord: 'break-word',
+}
+const setTextHeadNameNumber = {
+  fontSize: '20px',
+  width: '50%',
+  wrapWord: 'break-word',
+  textAlign: 'center',
+}
 class SearchBuildingResult extends React.Component {
   constructor(props) {
     super(props);
@@ -26,8 +42,8 @@ class SearchBuildingResult extends React.Component {
     return this.props.result.map(b => {
       return (
         <tr key={b._id}>
-          <td>{b.building_name}</td>
-          <td>{b.map_point}</td>
+          <td style={setTextName}>{b.building_name}</td>
+          <td style={setTextNameNumber}>{b.map_point}</td>
         </tr>
       )
     })
@@ -37,8 +53,8 @@ class SearchBuildingResult extends React.Component {
     return (
       <tbody>
         <tr style={tableHead}>
-          <th>ชื่ออาคาร</th>
-          <th>เลขที่อาคารบนแผนที่</th>
+          <th style={setTextName}>ชื่ออาคาร</th>
+          <th style={setTextHeadNameNumber}>เลขที่อาคารบนแผนที่</th>
         </tr>
         {this.getRenderItem()}
       </tbody>

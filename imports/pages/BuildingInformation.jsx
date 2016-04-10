@@ -27,13 +27,13 @@ export default class BuildingInformation extends React.Component {
     return (
       <div className="swiper-container">
         <div className="swiper-wrapper">
-            <div className="swiper-slide">
+            <div className="swiper-slide slide-page-1">
               <BuildingDescription />
             </div>
-            <div className="swiper-slide">
-              <FloorBuilding />
+            <div className="swiper-slide slide-page-1">
+              <FloorBuilding floors={this.props.floors} />
             </div>
-            <div className="swiper-slide">
+            <div className="swiper-slide slide-page-1">
               <FloorBuildingDetail rooms={this.props.rooms}/>
             </div>
         </div>
@@ -45,8 +45,7 @@ export default class BuildingInformation extends React.Component {
 export default createContainer(() => {
   const bid = FlowRouter.current().params.id;
   const rooms = Rooms.find({building_id: bid}).fetch();
-  console.log(rooms);
-  const floors = Floors.find().fetch();
+  const floors = Floors.find({building_id: bid}).fetch();
   return {
     rooms,
     floors

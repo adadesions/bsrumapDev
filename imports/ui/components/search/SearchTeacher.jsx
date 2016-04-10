@@ -5,19 +5,19 @@ import SearchTeacherResult from '../SearchResult/SearchTeacherResult.jsx';
 
 const sizeInput = {
   height: '3em',
-  fontSize: '22px',
+  fontSize: '20px',
 }
 const sizeText = {
-  fontSize: '22px',
+  fontSize: '20px',
 }
 const paddingLayout = {
   paddingLeft: '1em',
   paddingRight: '1em',
   paddingBottom: '1em',
-  paddingTop: '2em',
+  paddingTop: '1em',
 }
 const marginTable = {
-  marginTop : '5em',
+  marginTop : '3em',
   fontSize: '40px',
 }
 

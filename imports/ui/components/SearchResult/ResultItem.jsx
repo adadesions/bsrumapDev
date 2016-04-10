@@ -5,6 +5,7 @@ const rowTable = {
   justifyContent: 'space-between',
   paddingLeft: '2em',
   paddingRight: '2em',
+  height: '1em',
   alignItems: 'center',
 };
 const tableIcon = {
@@ -14,7 +15,9 @@ const tableIcon = {
 const setColorIcon = {
   color: '#009688',
 };
-
+const setTextFloor = {
+  fontSize: '20px',
+}
 export default class ResultItem extends React.Component {
   constructor(props) {
     super(props);
@@ -27,7 +30,7 @@ export default class ResultItem extends React.Component {
   }
 
   onClickIcon() {
-    const tid = this.state._id._str    
+    const tid = this.state._id._str
     const path = FlowRouter.path('teacherDetail',{ tid })
     FlowRouter.go(path)
   }
@@ -45,14 +48,14 @@ export default class ResultItem extends React.Component {
   render() {
     return (
       <tr style={rowTable}>
-        <td>
+        <td style={setTextFloor}>
           {this.state.firstName} {this.state.lastName}
         </td>
         <td style={tableIcon}>
           <i
             onClick={this.onClickIcon}
             style={setColorIcon}
-            className="large material-icons">
+            className="material-icons">
             send
           </i>
         </td>

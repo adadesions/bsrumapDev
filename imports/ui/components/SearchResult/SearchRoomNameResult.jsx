@@ -10,7 +10,14 @@ const fontSize18 = {
 const alignCenter = {
   'textAlign': 'center'
 }
-
+const styleCol = {
+  width: '20%',
+  fontSize: '20px',
+}
+const styleColDetail = {
+  width: '40%',
+  fontSize: '20px',
+}
 class SearchRoomNameResult extends React.Component {
   constructor(props) {
     super(props);
@@ -63,10 +70,10 @@ class SearchRoomNameResult extends React.Component {
     return this.props.result.map(r => {
       return (
           <tr key={r._id} style={fontSize18} className="tr-align-td-center" >
-            <td>อาคาร {r.building_id}</td>
-            <td>ชั้น {splitToFloor(r.room_id)}</td>
-            <td>ห้อง {splitToRoom(r.room_id)}</td>
-            <td>{r.description}</td>
+            <td style={styleCol}>อาคาร {r.building_id}</td>
+            <td style={styleCol}>ชั้น {splitToFloor(r.room_id)}</td>
+            <td style={styleCol}>ห้อง {splitToRoom(r.room_id)}</td>
+            <td style={styleColDetail}>{r.description}</td>
           </tr>
       )
     })
