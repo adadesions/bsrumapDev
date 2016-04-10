@@ -1,4 +1,5 @@
-import React from 'react';
+import React,{ PropTypes } from 'react';
+
 
 const justifyCard = {
   display: 'flex',
