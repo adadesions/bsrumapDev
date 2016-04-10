@@ -14,7 +14,7 @@ const setTextFloor = {
 }
 const setTextNameFloor = {
   fontSize: '22px',
-  width: '66%',
+  width: '60%',
   wrapWord: 'break-word',
 }
 const setColorIcon = {

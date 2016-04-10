@@ -16,6 +16,7 @@ import SearchBuildingByName from '../../ui/components/search/SearchBuildingByNam
 import SearchRoomByName from '../../ui/components/search/SearchRoomByName.jsx';
 import TeacherDetail from '../../ui/components/search/TeacherDetail.jsx';
 import BuildingInformation from '../../pages/BuildingInformation.jsx';
+import Admin from '../../pages/Admin.jsx';
 
 FlowRouter.route('/', {
   name: 'root',
@@ -67,6 +68,15 @@ FlowRouter.route('/menu', {
   action(){
     mount(AppContainer, {
       content: <MenuPage />
+    })
+  }
+})
+
+FlowRouter.route('/admin', {
+  name: 'admin',
+  action(){
+    mount(AppContainer, {
+      content: <Admin />
     })
   }
 })
