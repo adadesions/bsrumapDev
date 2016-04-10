@@ -2,6 +2,14 @@ import React, { PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Rooms } from '../../../api/collections/rooms.jsx';
 
+const styleCol = {
+  width: '20%',
+  fontSize: '20px',
+}
+const styleColDetail = {
+  width: '40%',
+  fontSize: '20px',
+}
 class SearchRoomNumberResult extends React.Component {
   constructor(props) {
     super(props);
@@ -46,10 +54,10 @@ class SearchRoomNumberResult extends React.Component {
     return this.props.result.map(r => {
       return (
         <tr key={r._id}>
-          <td>อาคาร {r.building_id}</td>
-          <td>ชั้น {splitToFloor(r.room_id)}</td>
-          <td>ห้อง {splitToRoom(r.room_id)}</td>
-          <td>{r.description}</td>
+          <td style={styleCol}>อาคาร {r.building_id}</td>
+          <td style={styleCol}>ชั้น {splitToFloor(r.room_id)}</td>
+          <td style={styleCol}>ห้อง {splitToRoom(r.room_id)}</td>
+          <td style={styleColDetail}>{r.description}</td>
         </tr>
       )
     })
@@ -96,7 +104,7 @@ export default createContainer((props) => {
     result = findRoomNumber(rooms);
   }
   else {
-    result = rooms;
+    result = Rooms.find({}, { limit: 100 }).fetch();
   }
   return {
     result,

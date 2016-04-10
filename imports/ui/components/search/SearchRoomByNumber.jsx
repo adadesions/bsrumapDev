@@ -15,7 +15,7 @@ const paddingLayout = {
   paddingTop: '2em',
 }
 const marginTable = {
-  marginTop : '5em',
+  marginTop : '3em',
   fontSize: '40px',
 }
 export default class SearchRoomByNumber extends React.Component {
