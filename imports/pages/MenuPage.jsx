@@ -40,8 +40,8 @@ export default class MenuPage extends React.Component {
      { id: 'search', src: '/iconMenu/search.png'},
      { id: 'map', src: '/iconMenu/map.png'},
      { id: 'ebook', src: '/iconMenu/ebook.png'},
-     { id: 'website', src: '/iconMenu/search.png'},
-     { id: 'contact', src: '/iconMenu/search.png'},
+     { id: 'website', src: '/iconMenu/web.png'},
+     { id: 'contact', src: '/iconMenu/contact.png'},
     ]);
   }
 
@@ -74,7 +74,7 @@ export default class MenuPage extends React.Component {
                     20);
     this.objectImage('website',
                     website,
-                    '/iconMenu/search.png',
+                    '/iconMenu/web.png',
                     gallerry.getResult('website'),
                     250,
                     230,
@@ -82,10 +82,10 @@ export default class MenuPage extends React.Component {
                     260);
     this.objectImage('contact',
                     contact,
-                    '/iconMenu/search.png',
+                    '/iconMenu/contact.png',
                     gallerry.getResult('contact'),
                     550,
-                    300,
+                    280,
                     260,
                     220);
   }
@@ -97,8 +97,8 @@ export default class MenuPage extends React.Component {
         nameObject = new createjs.Bitmap(gallerry.getResult(id));
         nameObject.x = x;
         nameObject.y = y;
-        nameObject.scaleX = 0.7;
-        nameObject.scaleY = 0.7;
+        nameObject.scaleX = 0.4;
+        nameObject.scaleY = 0.4;
         nameObject.addEventListener('click', (route) => {
           FlowRouter.go(`/${objId}`);
         })
