@@ -5,13 +5,16 @@ import SearchTeacherResult from '../SearchResult/SearchTeacherResult.jsx';
 
 const sizeInput = {
   height: '3em',
-  fontSize: '32px',
+  fontSize: '22px',
 }
 const sizeText = {
-  fontSize: '32px',
+  fontSize: '22px',
 }
 const paddingLayout = {
-  padding: '4em',
+  paddingLeft: '1em',
+  paddingRight: '1em',
+  paddingBottom: '1em',
+  paddingTop: '2em',
 }
 const marginTable = {
   marginTop : '5em',
@@ -65,7 +68,7 @@ export default class SearchTeacher extends React.Component {
           </div>
 
           <table style={marginTable} className="striped">
-            <SearchTeacherResult firstName={this.state.firstName} lastName={this.state.lastName}/>            
+            <SearchTeacherResult firstName={this.state.firstName} lastName={this.state.lastName}/>
           </table>
         </div>
       </div>

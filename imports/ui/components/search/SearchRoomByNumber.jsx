@@ -3,13 +3,16 @@ import SearchRoomNumberResult from '../SearchResult/SearchRoomNumberResult'
 
 const sizeInput = {
   height: '3em',
-  fontSize: '32px',
+  fontSize: '22px',
 }
 const sizeText = {
-  fontSize: '32px',
+  fontSize: '22px',
 }
 const paddingLayout = {
-  padding: '4em',
+  paddingLeft: '1em',
+  paddingRight: '1em',
+  paddingBottom: '1em',
+  paddingTop: '2em',
 }
 const marginTable = {
   marginTop : '5em',
@@ -35,7 +38,7 @@ export default class SearchRoomByNumber extends React.Component {
     return (
       <div>
         <div style={paddingLayout} className="row">
-          <div style={sizeInput} className="input-field col s6">
+          <div style={sizeInput} className="input-field col s12">
             <input
               style={sizeInput}
               id="roomNumber"

@@ -4,12 +4,12 @@ import { FlowRouter } from 'meteor/kadira:flow-router';
 const justifyCard ={
   display: 'flex',
   justifyContent: 'space-between',
-  paddingLeft: '4em',
+  alignItems: 'center',
+  paddingLeft: '3em',
   paddingRight: '3em',
 }
 const setTextCard = {
-  fontSize: '46px',
-  lineHeight: '1.8em',
+  fontSize: '22px',
 }
 const setColorIcon = {
   color: '#fff',
@@ -47,14 +47,12 @@ export default class SearchOption extends React.Component {
 
   render() {
     return (
-      <div className="row">
-        <div className="col s12">
-          <div onClick={this.onClickCard} style={justifyCard} className="card-panel teal z-depth-1">
-            <span style={setTextCard} className="white-text">
-              {this.getLabelName()}
-            </span>
-            <i style={setColorIcon} className="large material-icons">send</i>
-          </div>
+      <div className="col s12">
+        <div onClick={this.onClickCard} style={justifyCard} className="card-panel teal z-depth-1">
+          <span style={setTextCard} className="white-text">
+            {this.getLabelName()}
+          </span>
+          <i style={setColorIcon} className="material-icons">send</i>
         </div>
       </div>
     );
