@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 
 const paddingLayout = {
@@ -34,13 +34,29 @@ const alignRoomNumber = {
   fontWeight: 'bold',
 }
 export default class FloorBuildingDetail extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.onClickBack = this.onClickBack.bind(this);
+    this.getRenderRooms = this.getRenderRooms.bind(this);
   }
 
   onClickBack(){
     FlowRouter.go('floorBuilding');
+  }
+
+  getRenderRooms() {
+    return this.props.rooms.map(r => {
+      return (
+        <tr key={r._id} style={rowTable}>
+          <td style={alignRoomNumber}>
+            {r.room_id}
+          </td>
+          <td style={alignRoomName}>
+            {r.description}
+          </td>
+        </tr>
+      )
+    });
   }
 
   render() {
@@ -48,13 +64,14 @@ export default class FloorBuildingDetail extends React.Component {
         <div style={paddingLayout} className="row">
           <table className="striped">
             <tbody>
-              <tr style={rowTable}>
-                <td style={alignRoomNumber}>231</td>
-                <td style={alignRoomName}>ห้องอาจารย์คณะวิทย์</td>
-              </tr>
+              {this.getRenderRooms()}
             </tbody>
           </table>
         </div>
     );
   }
+}
+
+FloorBuildingDetail.PropTypes = {
+  rooms: PropTypes.array.isRequire,
 }
