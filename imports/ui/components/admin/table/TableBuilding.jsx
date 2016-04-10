@@ -1,5 +1,10 @@
-import React from 'react';
-import ResultBuilding from '../result/ResultBuilding.jsx'
+import React, { PropTypes } from 'react';
+import ResultBuilding from '../result/ResultBuilding.jsx';
+import { createContainer } from 'meteor/react-meteor-data';
+
+// Collection
+import { Building } from '../../../../api/collections/building.jsx';
+
 const paddingLayout = {
   padding: '1em',
   overflowX: 'auto',
@@ -37,3 +42,9 @@ export default class TableBuilding extends React.Component {
     )
   }
 }
+
+export default createContainer(() => {
+  return {
+    result: Building.find().fetch()
+  }
+}, TableBuilding);
