@@ -2,25 +2,31 @@ import React from 'react';
 import ResultBuilding from '../result/ResultBuilding.jsx'
 const paddingLayout = {
   padding: '1em',
+  overflowX: 'auto',
 }
 const textHeadTable = {
   fontSize: '14px',
+}
+const sizeTable = {
+  width: '150%',
+}
+const alignText = {
+  textAlign: 'center',
 }
 export default class TableBuilding extends React.Component {
 
   render() {
     return (
       <div style={paddingLayout} className="row">
-        <table className="striped">
+        <table style={sizeTable} className="striped">
           <thead>
             <tr style={textHeadTable}>
-                <th data-field="id">ID</th>
-                <th data-field="name">Building ID</th>
-                <th data-field="id">Building Name</th>
+                <th style={alignText} data-field="id">ID</th>
+                <th style={alignText} data-field="name">Building ID</th>
+                <th style={alignText} data-field="id">Building Name</th>
                 <th data-field="name">Discription</th>
-                <th data-field="id">Picture</th>
-                <th data-field="name">Map Point</th>
-                <th data-field="id">Floor Sum</th>
+                <th style={alignText} data-field="name">Map Point</th>
+                <th style={alignText} data-field="id">Floor Sum</th>
             </tr>
           </thead>
           <tbody>
