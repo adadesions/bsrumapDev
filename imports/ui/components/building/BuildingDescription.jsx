@@ -2,6 +2,8 @@ import React, { PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Building } from '../../../api/collections/building.jsx';
+import { Floors } from '../../../api/collections/floors.jsx';
+import { Rooms } from '../../../api/collections/rooms.jsx';
 
 class BuildingDescription extends React.Component {
   render() {
