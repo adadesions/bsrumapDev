@@ -8,7 +8,7 @@ const justifyCard = {
   cursor: 'pointer',
 }
 const setTextFloor = {
-  fontSize: '22px',
+  fontSize: '18px',
   fontWeight: 'bold',
 }
 const paddingLayout = {
