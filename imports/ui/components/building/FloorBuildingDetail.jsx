@@ -23,10 +23,25 @@ const styleTextButton = {
 }
 const alignRoomName = {
   width: '63%',
+  textAlign: 'center',
   wrapWord: 'break-word',
   fontSize: '22px',
 }
 const alignRoomNumber = {
+  width: '37%',
+  wrapWord: 'break-word',
+  textAlign: 'center',
+  fontSize: '26px',
+  fontWeight: 'bold',
+}
+const alignHeadRoomName = {
+  width: '63%',
+  wrapWord: 'break-word',
+  fontSize: '26px',
+  fontWeight: 'bold',
+  textAlign: 'center',
+}
+const alignHeadRoomNumber = {
   width: '37%',
   wrapWord: 'break-word',
   textAlign: 'center',
@@ -47,6 +62,12 @@ export default class FloorBuildingDetail extends React.Component {
     return (
         <div style={paddingLayout} className="row">
           <table className="striped">
+            <thead>
+              <tr style={rowTable}>
+                  <th style={alignHeadRoomNumber} data-field="id">เลขที่ห้อง</th>
+                  <th style={alignHeadRoomName} data-field="name">รายละเอียด</th>
+              </tr>
+            </thead>
             <tbody>
               <tr style={rowTable}>
                 <td style={alignRoomNumber}>231</td>
