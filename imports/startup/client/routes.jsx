@@ -4,8 +4,6 @@ import { mount } from 'react-mounter';
 import AppContainer from '../../layouts/AppContainer.jsx';
 
 // Pages
-import Map1 from '../../pages/Map1.jsx';
-import Map2 from '../../pages/Map2.jsx';
 import Login from '../../pages/Login.jsx';
 import Register from '../../pages/Register.jsx';
 import MainSearch from '../../pages/MainSearch.jsx';
@@ -18,6 +16,7 @@ import TeacherDetail from '../../ui/components/search/TeacherDetail.jsx';
 import BuildingInformation from '../../pages/BuildingInformation.jsx';
 import Admin from '../../pages/Admin.jsx';
 import AdminEdit from '../../pages/AdminEdit.jsx';
+import BuildingMap from '../../pages/BuildingMap.jsx';
 
 FlowRouter.route('/', {
   name: 'root',
@@ -32,16 +31,7 @@ FlowRouter.route('/map', {
   name: 'map',
   action(){
     mount(AppContainer, {
-      content: <Map1 />
-    })
-  }
-})
-
-FlowRouter.route('/map2', {
-  name: 'map2',
-  action(){
-    mount(AppContainer, {
-      content: <Map2 />
+      content: <BuildingMap />
     })
   }
 })

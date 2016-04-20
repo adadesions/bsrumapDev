@@ -22,10 +22,7 @@ export default class Map1 extends React.Component {
 								<area shape="poly" alt="" title="" coords="87,151,100,146,111,184,136,206,133,234,108,226,81,190" href="/building/11" target="" />
 								<area shape="poly" alt="" title="" coords="123,345,198,291,189,274,111,328" href="/building/12" target="" />
 						</map>
-					</center>
-						<button>
-							<a href="/map2">Map2</a>
-						</button>
+					</center>						
 				</main>
 		 	)
 	}

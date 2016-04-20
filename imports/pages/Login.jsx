@@ -49,7 +49,7 @@ export default class Login extends React.Component {
         FlowRouter.go('menu');
       }
       else {
-        console.log("Not yet");
+        alert("Username or Password is wrong!");
       }
     })
   }

@@ -1,8 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 
-
-
 export default class Mapc2 extends React.Component {
 
 	render() {
@@ -29,13 +27,8 @@ export default class Mapc2 extends React.Component {
 							<area shape="poly" alt="" title="" coords="261,434,281,407,188,281,115,340" href="/building/30" target="" />
 							<area shape="poly" alt="" title="" coords="310,426,362,373,343,354,292,409" href="/building/31" target="" />
 						</map>
-
-							<button>
-								<a href="/">Back</a>
-							</button>
-
 						</center>
 				</main>
-	  		  )
+	  )
 	}
 }
