@@ -90,7 +90,7 @@ export default createContainer((props) => {
   const findRoomNumber = (rooms) => {
     let result = [];
     rooms.map((r) => {
-      const includeRoomNumber = r.room_id.includes(roomNumber)
+      const includeRoomNumber = (r.room_id === (roomNumber))
       if(includeRoomNumber) {
         result.push(r)
       }

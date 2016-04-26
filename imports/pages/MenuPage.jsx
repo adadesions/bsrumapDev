@@ -96,11 +96,14 @@ export default class MenuPage extends React.Component {
         nameObject.scaleX = 0.5;
         nameObject.scaleY = 0.5;
         nameObject.addEventListener('click', (route) => {
-          if(objId === 'contact') {
-            FlowRouter.go(`/admin`);
+          const isAdmin = Meteor.user().profile.isAdmin;
+          if(objId === 'contact') {            
+            if (isAdmin) {
+              FlowRouter.go(`/admin`);
+            }
           }
           else {
-            FlowRouter.go(`/${objId}`);  
+            FlowRouter.go(`/${objId}`);
           }
         })
     stage.addChild(nameObject);

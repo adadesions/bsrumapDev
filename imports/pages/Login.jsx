@@ -33,6 +33,12 @@ const textLogin = {
 
 export default class Login extends React.Component {
 
+  componentDidMount() {
+    if (Meteor.userId()) {      
+      FlowRouter.go('menu');
+    }
+  }
+
   onClickRegister() {
     FlowRouter.go('register');
   }
