@@ -25,6 +25,9 @@ let stage,
 export default class MenuPage extends React.Component {
   constructor() {
     super();
+    if (!Meteor.user()) {
+      FlowRouter.go('/login')
+    }
     this.handleImageLoad = this.handleImageLoad.bind(this);
   }
   componentDidMount() {
