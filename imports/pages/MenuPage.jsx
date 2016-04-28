@@ -97,9 +97,12 @@ export default class MenuPage extends React.Component {
         nameObject.scaleY = 0.5;
         nameObject.addEventListener('click', (route) => {
           const isAdmin = Meteor.user().profile.isAdmin;
-          if(objId === 'contact') {            
+          if(objId === 'contact') {
             if (isAdmin) {
               FlowRouter.go(`/admin`);
+            }
+            else {
+              alert('You have no permission for this section.')
             }
           }
           else {

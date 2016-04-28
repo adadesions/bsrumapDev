@@ -37,11 +37,13 @@ export default class Register extends React.Component {
     const email = $('#email').val();
     const username = $('#username').val();
     const password = $('#password').val();
+    const profile = { isAdmin: false };
     Accounts.createUser({
       email,
       username,
       password,
-    })
+      profile
+    });
     FlowRouter.go('menu');
   }
   render() {
