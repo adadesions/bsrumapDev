@@ -34,7 +34,7 @@ class SearchRoomNumberResult extends React.Component {
         result = `${roomNumber.charAt(2)}${roomNumber.charAt(3)}`
       }
       if(roomNumber.length === 4) {
-        result = `${roomNumber.charAt(2)}`
+        result = `${roomNumber.charAt(1)}${roomNumber.charAt(2)}`
       }
       else if(roomNumber.length === 3) {
         result = `${roomNumber.charAt(1)}`

@@ -25,9 +25,6 @@ let stage,
 export default class MenuPage extends React.Component {
   constructor() {
     super();
-    if (!Meteor.user()) {
-      FlowRouter.go('/login')
-    }
     this.handleImageLoad = this.handleImageLoad.bind(this);
   }
   componentDidMount() {
@@ -71,18 +68,18 @@ export default class MenuPage extends React.Component {
                     35,
                     60,
                     20);
+      this.objectImage('contact',
+                      contact,
+                      '/iconMenu/contact.png',
+                      gallerry.getResult('contact'),
+                      160,
+                      180,
+                      150,
+                      190);
     this.objectImage('website',
                     website,
                     '/iconMenu/web.png',
                     gallerry.getResult('website'),
-                    160,
-                    180,
-                    150,
-                    190);
-    this.objectImage('contact',
-                    contact,
-                    '/iconMenu/contact.png',
-                    gallerry.getResult('contact'),
                     380,
                     190,
                     150,

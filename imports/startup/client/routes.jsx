@@ -77,7 +77,9 @@ FlowRouter.route('/ebook', {
 FlowRouter.route('/website', {
   name: 'website',
   action(){
-    window.open('http://adacode.io', '_system');
+    Meteor.logout(() => {
+      FlowRouter.go('login');
+    });
   }
 })
 
