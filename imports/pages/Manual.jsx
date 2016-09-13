@@ -1,5 +1,24 @@
 import React from 'react';
 
+const manualRender = (pages) => {
+  let manualPages = [];
+  for(let i=0; i<pages; i++){
+    manualPages.push(`/manual/n${i}.jpg`);
+  }
+  const renderPage = (manualPages) => {
+    return manualPages.map( (page,i) => {
+      return (
+        <div key={i} className="swiper-slide slide-page-1"><img className="manual-img" src={page} alt="" /></div>
+      );
+    })
+  }
+  return (
+    <div className="swiper-wrapper">
+      { renderPage(manualPages) }
+    </div>
+  );
+}
+
 export default class Manual extends React.Component {
   constructor(props) {
     super(props);
@@ -18,20 +37,7 @@ export default class Manual extends React.Component {
   render() {
     return (
       <div className="swiper-container">
-        <div className="swiper-wrapper">
-            <div className="swiper-slide slide-page-1">
-              {/*PHOTOHERE*/}
-              <img className="manual-img" src="/buildingDescription/d1.jpg" alt="" />
-            </div>
-            <div className="swiper-slide slide-page-1">
-              {/*PHOTOHERE*/}
-              <img className="manual-img" src="/buildingDescription/d1.jpg" alt="" />
-            </div>
-            <div className="swiper-slide slide-page-1">
-              {/*PHOTOHERE*/}
-              <img className="manual-img" src="/buildingDescription/d1.jpg" alt="" />
-            </div>
-        </div>
+        { manualRender(13) }
       </div>
     );
   }
