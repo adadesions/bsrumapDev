@@ -34,7 +34,7 @@ const textLogin = {
 export default class Login extends React.Component {
 
   componentDidMount() {
-    if (Meteor.userId()) {      
+    if (Meteor.userId()) {
       FlowRouter.go('menu');
     }
   }
@@ -65,7 +65,7 @@ export default class Login extends React.Component {
       <div style={layoutLogin} className="login-layout">
         <div style={blogLogin}>
           <h1 style={textLogin}>Login</h1><br/>
-            <input id="username" type="text" placeholder="Username" className="box-input"/>
+            <input id="username" type="text" placeholder="Email" className="box-input"/>
             <input id="password" type="password" placeholder="Password" className="box-input"/>
             <a
               onClick={this.onClickLogin}

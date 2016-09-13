@@ -14,6 +14,7 @@ import SearchBuildingByName from '../../ui/components/search/SearchBuildingByNam
 import SearchRoomByName from '../../ui/components/search/SearchRoomByName.jsx';
 import TeacherDetail from '../../ui/components/search/TeacherDetail.jsx';
 import BuildingInformation from '../../pages/BuildingInformation.jsx';
+import Manual from '../../pages/Manual.jsx';
 import Admin from '../../pages/Admin.jsx';
 import AdminEdit from '../../pages/AdminEdit.jsx';
 import BuildingMap from '../../pages/BuildingMap.jsx';
@@ -64,11 +65,11 @@ FlowRouter.route('/menu', {
 })
 
 
-FlowRouter.route('/ebook', {
-  name: 'ebook',
+FlowRouter.route('/manual', {
+  name: 'manual',
   action(){
     mount(AppContainer, {
-      content: <MenuPage />
+      content: <Manual />
     })
   }
 })

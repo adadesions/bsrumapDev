@@ -17,7 +17,7 @@ const rowTopMenu = {
 let stage,
   search,
   map,
-  ebook,
+  manual,
   website,
   contact,
   gallerry;
@@ -35,7 +35,7 @@ export default class MenuPage extends React.Component {
     gallerry.loadManifest([
      { id: 'search', src: '/iconMenu/search.png'},
      { id: 'map', src: '/iconMenu/map.png'},
-     { id: 'ebook', src: '/iconMenu/ebook.png'},
+     { id: 'manual', src: '/iconMenu/manual.png'},
      { id: 'website', src: '/iconMenu/web.png'},
      { id: 'contact', src: '/iconMenu/contact.png'},
     ]);
@@ -60,10 +60,10 @@ export default class MenuPage extends React.Component {
                     60,
                     20,
                     40);
-    this.objectImage('ebook',
-                    ebook,
-                    '/iconMenu/ebook.png',
-                    gallerry.getResult('ebook'),
+    this.objectImage('manual',
+                    manual,
+                    '/iconMenu/manual.png',
+                    gallerry.getResult('manual'),
                     500,
                     35,
                     60,
