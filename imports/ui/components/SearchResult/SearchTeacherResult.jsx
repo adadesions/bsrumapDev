@@ -17,7 +17,7 @@ export default class SearchTeacherResult extends React.Component {
 
   getRenderResult() {
     return this.props.result.map(t => {
-      return <ResultItem key={t._id} _id={t._id} firstName={t.teacher_fullname} lastName={t.teacher_lastname} />
+      return <ResultItem key={t._id} _id={t._id._str} firstName={t.teacher_fullname} lastName={t.teacher_lastname} />
     })
   }
 

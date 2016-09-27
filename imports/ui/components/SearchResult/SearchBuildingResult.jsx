@@ -1,13 +1,16 @@
+import { Meteor } from 'meteor/meteor';
 import React, { PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Building } from '../../../api/collections/building.jsx';
+import IconItem from '../admin/result/IconItem.jsx';
+import AdminTools from './AdminTools.jsx';
 
 const tableHead = {
-  'fontSize': '20',
+  'fontSize': '20px',
   'textAlign': 'center',
 }
 const setTextNameNumber = {
-  fontSize: '20px',
+  fontSize: '18px',
   width: '20%',
   wrapWord: 'break-word',
   textAlign: 'center',
@@ -39,11 +42,24 @@ class SearchBuildingResult extends React.Component {
   }
 
   getRenderItem() {
+    const showAdminTools = (itemId, collection) => {
+      const isAdmin = Meteor.user().profile.isAdmin;
+      if( isAdmin ) {
+        return (
+           <IconItem id={ itemId } collection={ collection } />
+        );
+      }
+    }
     return this.props.result.map(b => {
       return (
         <tr key={b._id}>
-          <td style={setTextName}>{b.building_name}</td>
+          <td style={setTextName}>
+            {b.building_name}
+          </td>
           <td style={setTextNameNumber}>{b.map_point}</td>
+          <td>
+            { showAdminTools(b._id._str, 'building') }
+          </td>
         </tr>
       )
     })
@@ -55,6 +71,7 @@ class SearchBuildingResult extends React.Component {
         <tr style={tableHead}>
           <th style={setTextName}>ชื่ออาคาร</th>
           <th style={setTextHeadNameNumber}>เลขที่อาคารบนแผนที่</th>
+          <th></th>
         </tr>
         {this.getRenderItem()}
       </tbody>

@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { FlowRouter } from 'meteor/kadira:flow-router';
+import { Mongo } from 'meteor/mongo';
 
 // Collection
 import { Building } from '../../../../api/collections/building.jsx';
@@ -23,21 +24,22 @@ export default class IconItem extends React.Component {
 
   onClickDelete() {
     const id = this.props.id;
+    const objId = new Mongo.ObjectID(id);
     const collection = this.props.collection;
-    let isConfirm = confirm("Do you want to delete this item?");
+    let isConfirm = confirm("Do you want to delete this item?");    
     if(isConfirm) {
       switch(collection) {
         case 'building':
-              Building.remove({_id:id});
+              Building.remove({_id:objId});
               break;
         case 'floors':
-              Floors.remove({_id:id});
+              Floors.remove({_id:objId});
               break;
         case 'rooms':
-              Rooms.remove({_id:id});
+              Rooms.remove({_id:objId});
               break;
         case 'teachers':
-              Teachers.remove({_id:id});
+              Teachers.remove({_id:objId});
               break;
       }
     }
@@ -45,7 +47,7 @@ export default class IconItem extends React.Component {
 
   onClickEdit() {
     const id = this.props.id;
-    const collection = this.props.collection;    
+    const collection = this.props.collection;
     const params = {collection, id};
     const path = FlowRouter.path('adminEdit', params);
     FlowRouter.go(path)
@@ -53,7 +55,6 @@ export default class IconItem extends React.Component {
 
   render() {
     return (
-      <td>
         <div style={styleIcon}>
           <i
             style={icon}
@@ -66,7 +67,6 @@ export default class IconItem extends React.Component {
             onClick={ this.onClickDelete }
           >delete</i>
         </div>
-      </td>
     );
   }
 }

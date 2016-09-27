@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Rooms } from '../../../api/collections/rooms.jsx';
+import IconItem from '../admin/result/IconItem.jsx';
 
 const fontSize18 = {
   'fontSize': '30px',
@@ -67,6 +68,15 @@ class SearchRoomNameResult extends React.Component {
       return result;
     }
 
+    const showAdminTools = (itemId, collection) => {
+      const isAdmin = Meteor.user().profile.isAdmin;
+      if( isAdmin ) {
+        return (
+           <IconItem id={ itemId } collection={ collection } />
+        );
+      }
+    }
+
     return this.props.result.map(r => {
       return (
           <tr key={r._id} style={fontSize18} className="tr-align-td-center" >
@@ -74,6 +84,9 @@ class SearchRoomNameResult extends React.Component {
             <td style={styleCol}>ชั้น {splitToFloor(r.room_id)}</td>
             <td style={styleCol}>ห้อง {splitToRoom(r.room_id)}</td>
             <td style={styleColDetail}>{r.description}</td>
+            <td>
+              { showAdminTools(r._id._str, 'rooms') }
+            </td>
           </tr>
       )
     })

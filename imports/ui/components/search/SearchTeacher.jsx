@@ -54,7 +54,7 @@ export default class SearchTeacher extends React.Component {
               className="validate"
               onChange={this.onInputKeyUp}
             />
-            <label style={sizeText} htmlhtmlFor="firstName">ชื่อ</label>
+          <label style={sizeText} htmlFor="firstName">ชื่อ</label>
           </div>
           <div style={sizeInput} className="input-field col s6">
             <input
@@ -64,7 +64,7 @@ export default class SearchTeacher extends React.Component {
               className="validate"
               onChange={this.onInputKeyUp}
             />
-            <label style={sizeText} htmlhtmlFor="lastName">นามสกุล</label>
+            <label style={sizeText} htmlFor="lastName">นามสกุล</label>
           </div>
 
           <table style={marginTable} className="striped">

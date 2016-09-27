@@ -1,4 +1,5 @@
 import React,{ PropTypes } from 'react'
+import IconItem from '../admin/result/IconItem.jsx';
 
 const rowTable = {
   display: 'flex',
@@ -46,8 +47,20 @@ export default class ResultItem extends React.Component {
   }
 
   render() {
+    const showAdminTools = (itemId, collection) => {
+      const isAdmin = Meteor.user().profile.isAdmin;
+      if( isAdmin ) {
+        return (
+           <IconItem id={ itemId } collection={ collection } />
+        );
+      }
+    }
+
     return (
       <tr style={rowTable}>
+        <td>
+          { showAdminTools(this.state._id, 'teachers') }
+        </td>
         <td style={setTextFloor}>
           {this.state.firstName} {this.state.lastName}
         </td>
