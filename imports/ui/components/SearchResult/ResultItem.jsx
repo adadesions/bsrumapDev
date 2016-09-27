@@ -31,7 +31,7 @@ export default class ResultItem extends React.Component {
   }
 
   onClickIcon() {
-    const tid = this.state._id._str
+    const tid = this.state._id
     const path = FlowRouter.path('teacherDetail',{ tid })
     FlowRouter.go(path)
   }
@@ -51,16 +51,16 @@ export default class ResultItem extends React.Component {
       const isAdmin = Meteor.user().profile.isAdmin;
       if( isAdmin ) {
         return (
-           <IconItem id={ itemId } collection={ collection } />
+          <td>
+            <IconItem id={ itemId } collection={ collection } />
+          </td>
         );
       }
     }
 
     return (
       <tr style={rowTable}>
-        <td>
-          { showAdminTools(this.state._id, 'teachers') }
-        </td>
+        { showAdminTools(this.state._id, 'teachers') }
         <td style={setTextFloor}>
           {this.state.firstName} {this.state.lastName}
         </td>
