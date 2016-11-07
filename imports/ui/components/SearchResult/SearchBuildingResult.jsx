@@ -4,6 +4,7 @@ import { createContainer } from 'meteor/react-meteor-data';
 import { Building } from '../../../api/collections/building.jsx';
 import IconItem from '../admin/result/IconItem.jsx';
 import AdminTools from './AdminTools.jsx';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
 const tableHead = {
   'fontSize': '20px',
@@ -44,7 +45,9 @@ class SearchBuildingResult extends React.Component {
   getRenderItem() {
     const showAdminTools = (itemId, collection) => {
       const isAdmin = Meteor.user().profile.isAdmin;
-      if( isAdmin ) {
+      const isAdminPath = FlowRouter.current().oldRoute.name === 'admin';
+      const isRenderAdminTools = isAdmin && isAdminPath;
+      if( isRenderAdminTools ) {
         return (
            <IconItem id={ itemId } collection={ collection } />
         );

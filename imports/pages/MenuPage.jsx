@@ -73,15 +73,15 @@ export default class MenuPage extends React.Component {
                       '/iconMenu/contact.png',
                       gallerry.getResult('contact'),
                       160,
-                      180,
+                      110,
                       150,
-                      190);
+                      150);
     this.objectImage('website',
                     website,
                     '/iconMenu/web.png',
                     gallerry.getResult('website'),
-                    380,
-                    190,
+                    390,
+                    120,
                     150,
                     170);
   }
@@ -111,9 +111,9 @@ export default class MenuPage extends React.Component {
         })
     stage.addChild(nameObject);
     createjs.Tween.get(nameObject, {loop: true})
-          .to({y: yTarget}, 5500, createjs.Ease.getPowInOut(1))
-          .to({y: yEnd}, 5500, createjs.Ease.getPowInOut(1))
-          .to({y: y}, 5500, createjs.Ease.getPowInOut(1))
+          .to({y: yTarget}, 5000, createjs.Ease.getPowInOut(1))
+          .to({y: yEnd}, 5000, createjs.Ease.getPowInOut(1))
+          .to({y: y}, 5000, createjs.Ease.getPowInOut(1))
 
   }
 

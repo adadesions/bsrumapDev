@@ -1,5 +1,6 @@
 import React,{ PropTypes } from 'react'
 import IconItem from '../admin/result/IconItem.jsx';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
 const rowTable = {
   display: 'flex',
@@ -49,7 +50,9 @@ export default class ResultItem extends React.Component {
   render() {
     const showAdminTools = (itemId, collection) => {
       const isAdmin = Meteor.user().profile.isAdmin;
-      if( isAdmin ) {
+      const isAdminPath = FlowRouter.current().oldRoute.name === 'admin';
+      const isRenderAdminTools = isAdmin && isAdminPath;
+      if( isRenderAdminTools ) {
         return (
           <td>
             <IconItem id={ itemId } collection={ collection } />
